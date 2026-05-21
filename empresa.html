@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sandvik do Brasil · Exposibram 24x7</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpolygon points='12,2 22,8 22,16 12,22 2,16 2,8' fill='%23D4A843'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+  <div id="app-header"></div>
+
+  <!-- ─── PAGE HEADER ────────────────────────────────────────── -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Início</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="diretorio.html">Diretório</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Sandvik do Brasil</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── HERO DO PERFIL ────────────────────────────────────── -->
+  <section style="background:var(--white); border-bottom:1px solid var(--gray-200); padding: 32px 0;">
+    <div class="container">
+      <div style="display:grid; grid-template-columns: 1fr auto; gap: 32px; align-items:flex-start">
+        <div style="display:flex; gap: 24px; align-items:flex-start">
+          <div style="width:96px; height:96px; background: linear-gradient(135deg, var(--teal-800), var(--teal-600)); color:var(--white); border-radius:var(--radius-lg); display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-size:42px; font-weight:700; position:relative; flex-shrink:0;">
+            S
+            <span style="position:absolute; bottom:-6px; right:-6px; width:30px; height:30px; background:var(--green-500); color:var(--white); border-radius: 50%; display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:700; border: 3px solid var(--white)">✓</span>
+          </div>
+          <div>
+            <div style="display:flex; align-items:center; gap: 10px; margin-bottom: 8px; flex-wrap:wrap">
+              <h1 style="font-family:var(--font-serif); font-size: 30px; font-weight: 700; color: var(--teal-900); letter-spacing:-0.5px;">Sandvik do Brasil</h1>
+              <span class="tag tag-gold">⚡ Membro Fundador</span>
+              <span class="tag tag-teal">Homologado IBRAM</span>
+            </div>
+            <p style="color:var(--gray-700); font-size:15px; margin-bottom: 14px; max-width:680px; line-height:1.55;">Líder global em equipamentos de perfuração, britagem e peneiramento para mineração subterrânea e a céu aberto. Operações no Brasil desde 1953.</p>
+            <div style="display:flex; gap: 20px; flex-wrap: wrap; align-items:center; font-size:13px">
+              <span style="display:inline-flex; align-items:center; gap:6px; color:var(--gray-700)">📍 Várzea Paulista, SP · 4 unidades no Brasil</span>
+              <span style="display:inline-flex; align-items:center; gap:6px; color:var(--gray-700)">🏭 Multinacional · Fundada em 1862</span>
+              <span style="display:inline-flex; align-items:center; gap:6px; color:var(--gray-700)">👥 1.200+ colaboradores no Brasil</span>
+            </div>
+            <div style="display:flex; gap: 24px; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--gray-100)">
+              <div>
+                <div style="font-family:var(--font-serif); font-size:24px; font-weight:700; color:var(--teal-900)">★ 4.9</div>
+                <div style="font-size:11px; color:var(--gray-600); text-transform:uppercase; letter-spacing:1px">142 avaliações</div>
+              </div>
+              <div style="border-left:1px solid var(--gray-200); padding-left: 24px">
+                <div style="font-family:var(--font-serif); font-size:24px; font-weight:700; color:var(--teal-900)">142</div>
+                <div style="font-size:11px; color:var(--gray-600); text-transform:uppercase; letter-spacing:1px">Contratos via plataforma</div>
+              </div>
+              <div style="border-left:1px solid var(--gray-200); padding-left: 24px">
+                <div style="font-family:var(--font-serif); font-size:24px; font-weight:700; color:var(--teal-900)">18</div>
+                <div style="font-size:11px; color:var(--gray-600); text-transform:uppercase; letter-spacing:1px">Mineradoras atendidas</div>
+              </div>
+              <div style="border-left:1px solid var(--gray-200); padding-left: 24px">
+                <div style="font-family:var(--font-serif); font-size:24px; font-weight:700; color:var(--green-600)">98%</div>
+                <div style="font-size:11px; color:var(--gray-600); text-transform:uppercase; letter-spacing:1px">Taxa de entrega no prazo</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap: 10px; min-width:220px">
+          <button class="btn btn-gold btn-lg" style="width:100%">💬 Solicitar Cotação</button>
+          <button class="btn btn-outline" style="width:100%">📅 Agendar Reunião</button>
+          <button class="btn btn-ghost btn-sm" style="width:100%">⭐ Salvar empresa</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TABS DE NAVEGAÇÃO ─────────────────────────────────── -->
+  <section style="background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 0; position: sticky; top: 84px; z-index: 50;">
+    <div class="container">
+      <div style="display:flex; gap: 4px;">
+        <a href="#sobre" style="padding: 14px 20px; font-size: 14px; font-weight: 600; color: var(--teal-800); border-bottom: 2px solid var(--gold-500);">Sobre</a>
+        <a href="#produtos" style="padding: 14px 20px; font-size: 14px; font-weight: 500; color: var(--gray-600); border-bottom: 2px solid transparent;">Produtos & Serviços</a>
+        <a href="#cases" style="padding: 14px 20px; font-size: 14px; font-weight: 500; color: var(--gray-600); border-bottom: 2px solid transparent;">Cases</a>
+        <a href="#certificacoes" style="padding: 14px 20px; font-size: 14px; font-weight: 500; color: var(--gray-600); border-bottom: 2px solid transparent;">Certificações</a>
+        <a href="#avaliacoes" style="padding: 14px 20px; font-size: 14px; font-weight: 500; color: var(--gray-600); border-bottom: 2px solid transparent;">Avaliações (142)</a>
+        <a href="#contato" style="padding: 14px 20px; font-size: 14px; font-weight: 500; color: var(--gray-600); border-bottom: 2px solid transparent;">Contato</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTEÚDO PRINCIPAL ─────────────────────────────────── -->
+  <section style="padding: 32px 0">
+    <div class="container">
+      <div style="display:grid; grid-template-columns: 1fr 320px; gap: 28px; align-items: flex-start;">
+
+        <!-- COLUNA PRINCIPAL -->
+        <main>
+
+          <!-- Sobre -->
+          <div class="panel" id="sobre">
+            <div class="panel-header">
+              <h2 class="panel-title">Sobre a Sandvik do Brasil</h2>
+            </div>
+            <div class="panel-body">
+              <p style="color: var(--gray-800); line-height: 1.7; margin-bottom: 14px;">
+                A Sandvik é uma multinacional sueca presente no Brasil há mais de 70 anos, sendo referência global em equipamentos
+                de perfuração, britagem, peneiramento e moagem para mineração. No Brasil, opera unidades em Várzea Paulista (SP),
+                Belo Horizonte (MG), Parauapebas (PA) e Itabira (MG), com mais de 1.200 colaboradores e infraestrutura completa de
+                pós-venda, manutenção e serviços de campo.
+              </p>
+              <p style="color: var(--gray-800); line-height: 1.7;">
+                Atende às maiores mineradoras do Brasil — Vale, Anglo American, CSN, Kinross, Samarco, MRN e outras — com soluções
+                que vão desde equipamentos de perfuração de produção até sistemas completos de cominuição e processamento mineral.
+                Pioneira em automação e digitalização da operação, com a plataforma AutoMine® em uso em diversas operações brasileiras.
+              </p>
+            </div>
+          </div>
+
+          <!-- Produtos & Serviços -->
+          <div class="panel" id="produtos" style="margin-top: 20px;">
+            <div class="panel-header">
+              <h2 class="panel-title">Produtos e Serviços</h2>
+              <a href="#" class="section-link">Ver catálogo completo (48) →</a>
+            </div>
+            <div class="panel-body">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                <div style="border:1px solid var(--gray-200); border-radius:var(--radius-md); padding: 16px;">
+                  <div style="font-size: 11px; color: var(--gold-600); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px">Equipamentos de Perfuração</div>
+                  <div style="font-weight: 600; color: var(--teal-900); margin-bottom: 4px">Pantera DP1500i</div>
+                  <p style="font-size: 13px; color: var(--gray-600);">Perfuratriz para mineração a céu aberto, capacidade até 229mm</p>
+                </div>
+                <div style="border:1px solid var(--gray-200); border-radius:var(--radius-md); padding: 16px;">
+                  <div style="font-size: 11px; color: var(--gold-600); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px">Britagem</div>
+                  <div style="font-weight: 600; color: var(--teal-900); margin-bottom: 4px">Britador Cônico CH895i</div>
+                  <p style="font-size: 13px; color: var(--gray-600);">Britador cônico de alta capacidade com controle automatizado</p>
+                </div>
+                <div style="border:1px solid var(--gray-200); border-radius:var(--radius-md); padding: 16px;">
+                  <div style="font-size: 11px; color: var(--gold-600); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px">Operação Subterrânea</div>
+                  <div style="font-weight: 600; color: var(--teal-900); margin-bottom: 4px">LH625iE — LHD Elétrico</div>
+                  <p style="font-size: 13px; color: var(--gray-600);">Carregadeira elétrica subterrânea de 25 toneladas. Zero emissão.</p>
+                </div>
+                <div style="border:1px solid var(--gray-200); border-radius:var(--radius-md); padding: 16px;">
+                  <div style="font-size: 11px; color: var(--gold-600); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px">Automação</div>
+                  <div style="font-weight: 600; color: var(--teal-900); margin-bottom: 4px">AutoMine® Surface Drilling</div>
+                  <p style="font-size: 13px; color: var(--gray-600);">Sistema de automação para perfuratrizes de superfície</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cases -->
+          <div class="panel" id="cases" style="margin-top: 20px;">
+            <div class="panel-header">
+              <h2 class="panel-title">Cases de Sucesso</h2>
+              <a href="#" class="section-link">Ver todos (28) →</a>
+            </div>
+            <div class="panel-body">
+              <div style="display: flex; flex-direction: column; gap: 16px">
+                <div style="display:grid; grid-template-columns:80px 1fr auto; gap:16px; align-items:center; padding: 16px; background: var(--gray-50); border-radius:var(--radius-md);">
+                  <div style="width:64px; height:64px; background:linear-gradient(135deg, var(--gold-600), var(--gold-700)); color:var(--white); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-weight:700; font-size:22px">V</div>
+                  <div>
+                    <div style="font-size:11px; color:var(--gold-600); font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom: 4px">Vale Carajás</div>
+                    <div style="font-weight:600; color:var(--teal-900); margin-bottom: 4px">Implantação AutoMine® — N4E e N5</div>
+                    <p style="font-size:13px; color:var(--gray-700);">Automação completa de 18 perfuratrizes Pantera, com ganho de produtividade de 24% e redução de 31% em incidentes.</p>
+                  </div>
+                  <div style="text-align:right">
+                    <div style="font-family:var(--font-serif); font-size:18px; font-weight:700; color:var(--teal-800)">+24%</div>
+                    <div style="font-size:10px; color:var(--gray-600); text-transform:uppercase; letter-spacing:1px">Produtividade</div>
+                  </div>
+                </div>
+                <div style="display:grid; grid-template-columns:80px 1fr auto; gap:16px; align-items:center; padding: 16px; background: var(--gray-50); border-radius:var(--radius-md);">
+                  <div style="width:64px; height:64px; background:linear-gradient(135deg, var(--teal-700), var(--teal-500)); color:var(--white); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-weight:700; font-size:22px">A</div>
+                  <div>
+                    <div style="font-size:11px; color:var(--gold-600); font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom: 4px">Anglo American Minas-Rio</div>
+                    <div style="font-weight:600; color:var(--teal-900); margin-bottom: 4px">Modernização da planta de britagem</div>
+                    <p style="font-size:13px; color:var(--gray-700);">Substituição da linha de britagem primária com britadores CH895i, aumentando throughput em 18%.</p>
+                  </div>
+                  <div style="text-align:right">
+                    <div style="font-family:var(--font-serif); font-size:18px; font-weight:700; color:var(--teal-800)">+18%</div>
+                    <div style="font-size:10px; color:var(--gray-600); text-transform:uppercase; letter-spacing:1px">Throughput</div>
+                  </div>
+                </div>
+                <div style="display:grid; grid-template-columns:80px 1fr auto; gap:16px; align-items:center; padding: 16px; background: var(--gray-50); border-radius:var(--radius-md);">
+                  <div style="width:64px; height:64px; background:linear-gradient(135deg, var(--green-600), var(--green-500)); color:var(--white); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-weight:700; font-size:22px">K</div>
+                  <div>
+                    <div style="font-size:11px; color:var(--gold-600); font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom: 4px">Kinross Paracatu</div>
+                    <div style="font-weight:600; color:var(--teal-900); margin-bottom: 4px">Transição para frota elétrica subterrânea</div>
+                    <p style="font-size:13px; color:var(--gray-700);">Fornecimento de 8 LHDs elétricos LH625iE para operação subterrânea — economia de 1.200 ton CO₂/ano.</p>
+                  </div>
+                  <div style="text-align:right">
+                    <div style="font-family:var(--font-serif); font-size:18px; font-weight:700; color:var(--green-600)">-1.2k</div>
+                    <div style="font-size:10px; color:var(--gray-600); text-transform:uppercase; letter-spacing:1px">Ton CO₂/ano</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Avaliações -->
+          <div class="panel" id="avaliacoes" style="margin-top: 20px;">
+            <div class="panel-header">
+              <h2 class="panel-title">Avaliações de Mineradoras</h2>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span style="font-family:var(--font-serif); font-size:22px; font-weight:700; color:var(--teal-900)">★ 4.9</span>
+                <span style="font-size: 13px; color: var(--gray-600)">(142 avaliações verificadas)</span>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div style="display: flex; flex-direction: column; gap: 18px">
+                <div style="padding-bottom: 18px; border-bottom: 1px solid var(--gray-100);">
+                  <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom: 8px;">
+                    <div style="display:flex; align-items:center; gap: 12px">
+                      <div style="width:38px; height:38px; background: var(--teal-100); color: var(--teal-800); border-radius: 50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:13px;">CV</div>
+                      <div>
+                        <div style="font-weight:600; font-size:14px; color: var(--teal-900);">Carlos Vilela</div>
+                        <div style="font-size:12px; color: var(--gray-600)">Gerente de Suprimentos · Vale S.A.</div>
+                      </div>
+                    </div>
+                    <div>
+                      <div style="color:var(--gold-600); font-size:14px; font-weight:600;">★★★★★</div>
+                      <div style="font-size:11px; color:var(--gray-500); text-align:right">há 2 semanas</div>
+                    </div>
+                  </div>
+                  <p style="font-size: 14px; color: var(--gray-800); line-height: 1.6;">
+                    "Parceria há 8 anos. Equipamentos AutoMine® transformaram nossa operação em Carajás. Suporte técnico no Brasil é diferenciado — equipe local de engenharia responde em horas, não em dias. Recomendo fortemente."
+                  </p>
+                </div>
+                <div style="padding-bottom: 18px; border-bottom: 1px solid var(--gray-100);">
+                  <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom: 8px;">
+                    <div style="display:flex; align-items:center; gap: 12px">
+                      <div style="width:38px; height:38px; background: var(--teal-100); color: var(--teal-800); border-radius: 50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:13px;">PM</div>
+                      <div>
+                        <div style="font-weight:600; font-size:14px; color: var(--teal-900);">Patricia Mendes</div>
+                        <div style="font-size:12px; color: var(--gray-600)">Diretora de Operações · Anglo American</div>
+                      </div>
+                    </div>
+                    <div>
+                      <div style="color:var(--gold-600); font-size:14px; font-weight:600;">★★★★★</div>
+                      <div style="font-size:11px; color:var(--gray-500); text-align:right">há 1 mês</div>
+                    </div>
+                  </div>
+                  <p style="font-size: 14px; color: var(--gray-800); line-height: 1.6;">
+                    "Modernização da planta entregue dentro do prazo e dentro do orçamento. Algo raro em projetos dessa escala. Os britadores CH895i superaram as expectativas de capacidade."
+                  </p>
+                </div>
+              </div>
+              <a href="#" class="btn btn-outline" style="margin-top: 18px;">Ver todas as 142 avaliações →</a>
+            </div>
+          </div>
+
+        </main>
+
+        <!-- SIDEBAR DIREITA -->
+        <aside style="display:flex; flex-direction:column; gap: 16px;">
+
+          <!-- Card de Contato -->
+          <div class="panel" id="contato">
+            <div class="panel-body" style="padding: 22px">
+              <h3 style="font-family:var(--font-serif); font-size: 16px; font-weight: 700; color: var(--teal-900); margin-bottom: 16px;">Iniciar Conversa</h3>
+
+              <div style="display:flex; flex-direction:column; gap: 10px; margin-bottom: 16px;">
+                <button class="btn btn-gold" style="width:100%; justify-content:flex-start; padding: 12px 14px">
+                  💬 Enviar mensagem direta
+                </button>
+                <button class="btn btn-primary" style="width:100%; justify-content:flex-start; padding: 12px 14px">
+                  📋 Solicitar cotação (RFQ)
+                </button>
+                <button class="btn btn-outline" style="width:100%; justify-content:flex-start; padding: 12px 14px">
+                  📅 Agendar reunião online
+                </button>
+                <button class="btn btn-ghost" style="width:100%; justify-content:flex-start; padding: 12px 14px">
+                  📞 Solicitar contato telefônico
+                </button>
+              </div>
+
+              <div style="padding-top: 16px; border-top: 1px solid var(--gray-100); font-size: 13px;">
+                <div style="margin-bottom: 10px;">
+                  <div style="font-size:11px; color:var(--gray-500); letter-spacing:1px; text-transform:uppercase; margin-bottom: 2px">Responsável Comercial</div>
+                  <div style="font-weight:600; color: var(--teal-900);">Marcelo Bianchi</div>
+                  <div style="color: var(--gray-600); font-size:12px">Diretor Comercial — Mineração</div>
+                </div>
+                <div style="margin-bottom: 10px;">
+                  <div style="font-size:11px; color:var(--gray-500); letter-spacing:1px; text-transform:uppercase; margin-bottom: 2px">Tempo de resposta médio</div>
+                  <div style="font-weight:600; color: var(--green-600);">⚡ 4 horas em dias úteis</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificações -->
+          <div class="panel" id="certificacoes">
+            <div class="panel-body" style="padding: 22px">
+              <h3 style="font-family:var(--font-serif); font-size: 16px; font-weight: 700; color: var(--teal-900); margin-bottom: 14px;">Certificações Verificadas</h3>
+              <div style="display: flex; flex-direction: column; gap: 10px">
+                <div style="display:flex; align-items:center; gap: 10px; padding: 10px; background: var(--green-100); border-radius: var(--radius-md)">
+                  <span style="color: var(--green-600); font-size: 18px">✓</span>
+                  <div>
+                    <div style="font-weight: 600; font-size: 13px; color: var(--teal-900)">ISO 9001:2015</div>
+                    <div style="font-size: 11px; color: var(--gray-600)">Vigente até 12/2027</div>
+                  </div>
+                </div>
+                <div style="display:flex; align-items:center; gap: 10px; padding: 10px; background: var(--green-100); border-radius: var(--radius-md)">
+                  <span style="color: var(--green-600); font-size: 18px">✓</span>
+                  <div>
+                    <div style="font-weight: 600; font-size: 13px; color: var(--teal-900)">ISO 14001:2015</div>
+                    <div style="font-size: 11px; color: var(--gray-600)">Vigente até 08/2026</div>
+                  </div>
+                </div>
+                <div style="display:flex; align-items:center; gap: 10px; padding: 10px; background: var(--gold-100); border-radius: var(--radius-md)">
+                  <span style="color: var(--gold-600); font-size: 18px">⚡</span>
+                  <div>
+                    <div style="font-weight: 600; font-size: 13px; color: var(--teal-900)">Homologado IBRAM</div>
+                    <div style="font-size: 11px; color: var(--gray-600)">Categoria Ouro · 2025</div>
+                  </div>
+                </div>
+                <div style="display:flex; align-items:center; gap: 10px; padding: 10px; background: var(--teal-100); border-radius: var(--radius-md)">
+                  <span style="color: var(--teal-700); font-size: 18px">🌱</span>
+                  <div>
+                    <div style="font-weight: 600; font-size: 13px; color: var(--teal-900)">Compliance SBCE</div>
+                    <div style="font-size: 11px; color: var(--gray-600)">Validado · 2026</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Empresas similares -->
+          <div class="panel">
+            <div class="panel-body" style="padding: 22px">
+              <h3 style="font-family:var(--font-serif); font-size: 16px; font-weight: 700; color: var(--teal-900); margin-bottom: 14px;">Empresas Similares</h3>
+              <div style="display: flex; flex-direction: column; gap: 12px">
+                <a href="empresa.html" style="display:flex; align-items:center; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--gray-100)">
+                  <div style="width:38px; height:38px; background: var(--gray-100); color: var(--teal-800); border-radius: var(--radius-md); display: flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-weight: 700; font-size: 14px;">E</div>
+                  <div style="flex: 1; min-width: 0;">
+                    <div style="font-weight: 600; font-size: 13px; color: var(--teal-900);">Epiroc Brasil</div>
+                    <div style="font-size: 11px; color: var(--gray-600);">Equipamentos · ★ 4.8</div>
+                  </div>
+                </a>
+                <a href="empresa.html" style="display:flex; align-items:center; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--gray-100)">
+                  <div style="width:38px; height:38px; background: var(--gray-100); color: var(--teal-800); border-radius: var(--radius-md); display: flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-weight: 700; font-size: 14px;">C</div>
+                  <div style="flex: 1; min-width: 0;">
+                    <div style="font-weight: 600; font-size: 13px; color: var(--teal-900);">Caterpillar Brasil</div>
+                    <div style="font-size: 11px; color: var(--gray-600);">Equipamentos · ★ 4.9</div>
+                  </div>
+                </a>
+                <a href="empresa.html" style="display:flex; align-items:center; gap: 12px;">
+                  <div style="width:38px; height:38px; background: var(--gray-100); color: var(--teal-800); border-radius: var(--radius-md); display: flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-weight: 700; font-size: 14px;">M</div>
+                  <div style="flex: 1; min-width: 0;">
+                    <div style="font-weight: 600; font-size: 13px; color: var(--teal-900);">Metso Brasil</div>
+                    <div style="font-size: 11px; color: var(--gray-600);">Processamento · ★ 4.7</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <div id="app-footer"></div>
+  <script src="assets/shared.js"></script>
+</body>
+</html>

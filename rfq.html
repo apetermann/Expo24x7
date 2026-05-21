@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oportunidades · Exposibram 24x7</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpolygon points='12,2 22,8 22,16 12,22 2,16 2,8' fill='%23D4A843'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-nav="rfq">
+
+  <div id="app-header"></div>
+
+  <!-- ─── PAGE HEADER ────────────────────────────────────────── -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Início</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Oportunidades (RFQ)</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; gap: 24px;">
+        <div>
+          <h1 class="page-title">Oportunidades Abertas</h1>
+          <p style="color: rgba(255,255,255,0.65); font-size: 14px; margin-top: 8px; max-width: 580px;">
+            Demandas publicadas por mineradoras buscando fornecedores qualificados. Responda às RFQs antes do prazo.
+          </p>
+        </div>
+        <div style="display:flex; gap: 24px;">
+          <div style="text-align:right">
+            <div style="font-family: var(--font-serif); font-size: 28px; font-weight: 700; color: var(--gold-400)">R$ 96M+</div>
+            <div style="font-size: 11px; color: rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:1px">Em RFQs abertas</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-family: var(--font-serif); font-size: 28px; font-weight: 700; color: var(--gold-400)">28</div>
+            <div style="font-size: 11px; color: rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:1px">RFQs ativas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TABS ──────────────────────────────────────────────── -->
+  <section style="background: var(--white); border-bottom: 1px solid var(--gray-200);">
+    <div class="container">
+      <div style="display:flex; gap: 4px;">
+        <a href="#" style="padding: 14px 20px; font-size: 14px; font-weight: 600; color: var(--teal-800); border-bottom: 2px solid var(--gold-500);">Todas (28)</a>
+        <a href="#" style="padding: 14px 20px; font-size: 14px; font-weight: 500; color: var(--gray-600); border-bottom: 2px solid transparent;">Match para mim (23)</a>
+        <a href="#" style="padding: 14px 20px; font-size: 14px; font-weight: 500; color: var(--gray-600); border-bottom: 2px solid transparent;">Já respondi (4)</a>
+        <a href="#" style="padding: 14px 20px; font-size: 14px; font-weight: 500; color: var(--gray-600); border-bottom: 2px solid transparent;">Salvas (7)</a>
+        <a href="#" style="padding: 14px 20px; font-size: 14px; font-weight: 500; color: var(--gray-600); border-bottom: 2px solid transparent; margin-left:auto;">+ Publicar RFQ (mineradoras)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── LAYOUT PRINCIPAL ──────────────────────────────────── -->
+  <section style="background: var(--gray-100); padding: 32px 0;">
+    <div class="container">
+      <div style="display:grid; grid-template-columns: 380px 1fr; gap: 20px; align-items:flex-start;">
+
+        <!-- LISTA DE RFQs -->
+        <aside style="display:flex; flex-direction:column; gap: 10px; position:sticky; top: 96px; max-height: calc(100vh - 110px); overflow-y: auto;">
+
+          <!-- Filtros rápidos -->
+          <div style="background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius-lg); padding: 14px;">
+            <input type="text" placeholder="🔍 Buscar RFQs..." style="width:100%; padding: 10px 14px; background: var(--gray-50); border:1px solid var(--gray-200); border-radius: var(--radius-md); font-size: 13px; outline:none;">
+            <div style="display:flex; gap: 6px; margin-top: 10px; flex-wrap: wrap;">
+              <button class="btn btn-primary btn-sm" style="font-size: 11px; padding: 5px 10px">Match alto</button>
+              <button class="btn btn-ghost btn-sm" style="font-size: 11px; padding: 5px 10px">Equipamentos</button>
+              <button class="btn btn-ghost btn-sm" style="font-size: 11px; padding: 5px 10px">Processamento</button>
+              <button class="btn btn-ghost btn-sm" style="font-size: 11px; padding: 5px 10px">Tech</button>
+            </div>
+          </div>
+
+          <!-- Card RFQ ATIVO (selecionado) -->
+          <div style="background:var(--white); border:2px solid var(--teal-700); border-radius:var(--radius-lg); padding: 16px; cursor:pointer; position:relative;">
+            <div style="position:absolute; top:12px; right:12px; background: var(--green-100); color: var(--green-600); font-size: 10px; font-weight: 700; padding: 3px 7px; border-radius: var(--radius-full); letter-spacing: 0.5px;">96% MATCH</div>
+            <div style="display:flex; gap: 12px; margin-bottom: 12px;">
+              <div style="width:42px;height:42px;background:linear-gradient(135deg,var(--gold-600),var(--gold-700));color:var(--white);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:700;font-size:18px;flex-shrink:0">V</div>
+              <div style="flex:1; min-width:0; padding-right: 50px;">
+                <div style="font-size:11px; font-weight:700; color:var(--teal-700); letter-spacing: 0.5px; margin-bottom: 2px;">VALE S.A.</div>
+                <div style="font-weight:600; font-size:13px; color:var(--teal-900); line-height:1.35; margin-bottom:4px;">Sistema de monitoramento de barragens</div>
+                <div style="font-size:11px; color:var(--gray-500)">Tecnologia · Itabira, MG</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding-top: 10px; border-top: 1px solid var(--gray-100);">
+              <div style="font-size:12px;"><strong style="color:var(--teal-800)">R$ 8M-12M</strong></div>
+              <div style="font-size:11px; color:var(--red-500); font-weight:600;">⏱ 13 dias restantes</div>
+            </div>
+          </div>
+
+          <!-- Cards de outras RFQs -->
+          <div style="background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius-lg); padding: 16px; cursor:pointer; position:relative;">
+            <div style="position:absolute; top:12px; right:12px; background: var(--green-100); color: var(--green-600); font-size: 10px; font-weight: 700; padding: 3px 7px; border-radius: var(--radius-full); letter-spacing: 0.5px;">94% MATCH</div>
+            <div style="display:flex; gap: 12px; margin-bottom: 12px;">
+              <div style="width:42px;height:42px;background:linear-gradient(135deg,var(--teal-700),var(--teal-500));color:var(--white);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:700;font-size:18px;flex-shrink:0">Sa</div>
+              <div style="flex:1; min-width:0; padding-right: 50px;">
+                <div style="font-size:11px; font-weight:700; color:var(--teal-700); letter-spacing: 0.5px; margin-bottom: 2px;">SAMARCO MINERAÇÃO</div>
+                <div style="font-weight:600; font-size:13px; color:var(--teal-900); line-height:1.35; margin-bottom:4px;">Explosivos industriais — anual 2026</div>
+                <div style="font-size:11px; color:var(--gray-500)">Insumos · Mariana, MG</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding-top: 10px; border-top: 1px solid var(--gray-100);">
+              <div style="font-size:12px;"><strong style="color:var(--teal-800)">R$ 25M-32M</strong></div>
+              <div style="font-size:11px; color:var(--gray-700); font-weight:500;">⏱ 12 dias restantes</div>
+            </div>
+          </div>
+
+          <div style="background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius-lg); padding: 16px; cursor:pointer; position:relative;">
+            <div style="position:absolute; top:12px; right:12px; background: var(--green-100); color: var(--green-600); font-size: 10px; font-weight: 700; padding: 3px 7px; border-radius: var(--radius-full); letter-spacing: 0.5px;">92% MATCH</div>
+            <div style="display:flex; gap: 12px; margin-bottom: 12px;">
+              <div style="width:42px;height:42px;background:linear-gradient(135deg,var(--teal-700),var(--teal-500));color:var(--white);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:700;font-size:18px;flex-shrink:0">A</div>
+              <div style="flex:1; min-width:0; padding-right: 50px;">
+                <div style="font-size:11px; font-weight:700; color:var(--teal-700); letter-spacing: 0.5px; margin-bottom: 2px;">ANGLO AMERICAN</div>
+                <div style="font-weight:600; font-size:13px; color:var(--teal-900); line-height:1.35; margin-bottom:4px;">Peças de moinho SAG (Minas-Rio)</div>
+                <div style="font-size:11px; color:var(--gray-500)">Processamento · MG</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding-top: 10px; border-top: 1px solid var(--gray-100);">
+              <div style="font-size:12px;"><strong style="color:var(--teal-800)">R$ 4M-6M</strong></div>
+              <div style="font-size:11px; color:var(--gray-700); font-weight:500;">⏱ 20 dias restantes</div>
+            </div>
+          </div>
+
+          <div style="background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius-lg); padding: 16px; cursor:pointer; position:relative;">
+            <div style="position:absolute; top:12px; right:12px; background: var(--gold-100); color: var(--gold-700); font-size: 10px; font-weight: 700; padding: 3px 7px; border-radius: var(--radius-full); letter-spacing: 0.5px;">90% MATCH</div>
+            <div style="display:flex; gap: 12px; margin-bottom: 12px;">
+              <div style="width:42px;height:42px;background:linear-gradient(135deg,var(--red-500),var(--red-600));color:var(--white);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:700;font-size:18px;flex-shrink:0">N</div>
+              <div style="flex:1; min-width:0; padding-right: 50px;">
+                <div style="font-size:11px; font-weight:700; color:var(--teal-700); letter-spacing: 0.5px; margin-bottom: 2px;">NEXA RESOURCES</div>
+                <div style="font-weight:600; font-size:13px; color:var(--teal-900); line-height:1.35; margin-bottom:4px;">Frota elétrica subterrânea</div>
+                <div style="font-size:11px; color:var(--gray-500)">Equipamentos · Vazante, MG</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding-top: 10px; border-top: 1px solid var(--gray-100);">
+              <div style="font-size:12px;"><strong style="color:var(--teal-800)">R$ 38M-48M</strong></div>
+              <div style="font-size:11px; color:var(--gray-700); font-weight:500;">⏱ 45 dias restantes</div>
+            </div>
+          </div>
+
+          <div style="background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius-lg); padding: 16px; cursor:pointer; position:relative;">
+            <div style="position:absolute; top:12px; right:12px; background: var(--gold-100); color: var(--gold-700); font-size: 10px; font-weight: 700; padding: 3px 7px; border-radius: var(--radius-full); letter-spacing: 0.5px;">88% MATCH</div>
+            <div style="display:flex; gap: 12px; margin-bottom: 12px;">
+              <div style="width:42px;height:42px;background:linear-gradient(135deg,var(--green-600),var(--green-500));color:var(--white);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:700;font-size:18px;flex-shrink:0">K</div>
+              <div style="flex:1; min-width:0; padding-right: 50px;">
+                <div style="font-size:11px; font-weight:700; color:var(--teal-700); letter-spacing: 0.5px; margin-bottom: 2px;">KINROSS BRASIL</div>
+                <div style="font-weight:600; font-size:13px; color:var(--teal-900); line-height:1.35; margin-bottom:4px;">Descomissionamento (Paracatu)</div>
+                <div style="font-size:11px; color:var(--gray-500)">Consultoria · Paracatu, MG</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; padding-top: 10px; border-top: 1px solid var(--gray-100);">
+              <div style="font-size:12px;"><strong style="color:var(--teal-800)">R$ 800k-1.5M</strong></div>
+              <div style="font-size:11px; color:var(--gray-700); font-weight:500;">⏱ 30 dias restantes</div>
+            </div>
+          </div>
+
+          <div style="text-align:center; padding: 12px;">
+            <button class="btn btn-ghost btn-sm">Carregar mais 23 RFQs ↓</button>
+          </div>
+
+        </aside>
+
+        <!-- DETALHE DO RFQ SELECIONADO -->
+        <main style="background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius-lg); overflow:hidden;">
+
+          <!-- Header do detalhe -->
+          <div style="padding: 28px 32px; border-bottom: 1px solid var(--gray-200); background: linear-gradient(180deg, var(--teal-50), var(--white));">
+            <div style="display:flex; align-items:center; gap: 8px; margin-bottom: 12px;">
+              <span style="background: var(--green-100); color: var(--green-600); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: var(--radius-full); letter-spacing: 0.5px;">96% MATCH PARA SANDVIK</span>
+              <span style="background: var(--red-100); color: var(--red-600); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: var(--radius-full); letter-spacing: 0.5px;">⏱ 13 DIAS RESTANTES</span>
+              <span style="background: var(--gray-100); color: var(--gray-700); font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: var(--radius-full);">RFQ-2026-0142</span>
+            </div>
+
+            <div style="display:flex; gap: 18px; align-items:flex-start;">
+              <div style="width:64px;height:64px;background:linear-gradient(135deg,var(--gold-600),var(--gold-700));color:var(--white);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:700;font-size:26px;flex-shrink:0">V</div>
+              <div style="flex:1">
+                <div style="font-size: 12px; font-weight: 700; color: var(--teal-700); letter-spacing: 1px; margin-bottom: 4px;">VALE S.A.</div>
+                <h1 style="font-family:var(--font-serif); font-size: 24px; font-weight: 700; color: var(--teal-900); margin-bottom: 8px; line-height: 1.2;">
+                  Sistema de monitoramento de barragens de rejeitos
+                </h1>
+                <div style="display:flex; gap: 18px; font-size: 13px; color: var(--gray-700); flex-wrap: wrap;">
+                  <span>📁 <strong>Tecnologia e Automação</strong></span>
+                  <span>📍 <strong>Itabira, MG</strong></span>
+                  <span>📅 Publicada há 2 dias</span>
+                  <span>👥 <strong>7 candidatos</strong> até agora</span>
+                </div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-family:var(--font-serif); font-size: 28px; font-weight: 700; color: var(--teal-900); line-height: 1;">R$ 8M-12M</div>
+                <div style="font-size: 11px; color: var(--gray-600); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;">Orçamento estimado</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Corpo do detalhe -->
+          <div style="padding: 28px 32px;">
+
+            <!-- Descrição -->
+            <div style="margin-bottom: 28px;">
+              <h3 style="font-family:var(--font-serif); font-size: 16px; font-weight: 700; color: var(--teal-900); margin-bottom: 12px;">📋 Descrição da demanda</h3>
+              <div style="color: var(--gray-800); line-height: 1.7; font-size: 14px;">
+                <p style="margin-bottom: 12px;">A Vale está em processo de modernização dos sistemas de monitoramento de suas barragens de rejeitos em Minas Gerais. Buscamos solução completa de monitoramento em tempo real para 3 barragens da operação do Complexo Itabira, com cobertura de 24 meses e suporte técnico no Brasil.</p>
+                <p>O fornecedor deverá apresentar proposta que contemple integração com plataforma corporativa SAP, dashboards em tempo real, alertas automatizados e compliance total com a Resolução ANM 95/2022.</p>
+              </div>
+            </div>
+
+            <!-- Especificações técnicas -->
+            <div style="margin-bottom: 28px;">
+              <h3 style="font-family:var(--font-serif); font-size: 16px; font-weight: 700; color: var(--teal-900); margin-bottom: 14px;">⚙️ Especificações técnicas</h3>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div style="padding: 14px 16px; background: var(--gray-50); border-radius: var(--radius-md); border-left: 3px solid var(--gold-500);">
+                  <div style="font-size: 11px; font-weight: 700; color: var(--gold-600); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">Sensores</div>
+                  <div style="font-weight: 600; color: var(--teal-900); font-size: 14px;">InSAR + Piezômetros wireless</div>
+                  <div style="font-size: 12px; color: var(--gray-600);">Cobertura 360° das 3 barragens</div>
+                </div>
+                <div style="padding: 14px 16px; background: var(--gray-50); border-radius: var(--radius-md); border-left: 3px solid var(--gold-500);">
+                  <div style="font-size: 11px; font-weight: 700; color: var(--gold-600); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">Sampling</div>
+                  <div style="font-weight: 600; color: var(--teal-900); font-size: 14px;">Tempo real (≤ 5min latência)</div>
+                  <div style="font-size: 12px; color: var(--gray-600);">Coleta automatizada 24/7</div>
+                </div>
+                <div style="padding: 14px 16px; background: var(--gray-50); border-radius: var(--radius-md); border-left: 3px solid var(--gold-500);">
+                  <div style="font-size: 11px; font-weight: 700; color: var(--gold-600); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">Integração</div>
+                  <div style="font-weight: 600; color: var(--teal-900); font-size: 14px;">API SAP + Power BI</div>
+                  <div style="font-size: 12px; color: var(--gray-600);">Conector certificado obrigatório</div>
+                </div>
+                <div style="padding: 14px 16px; background: var(--gray-50); border-radius: var(--radius-md); border-left: 3px solid var(--gold-500);">
+                  <div style="font-size: 11px; font-weight: 700; color: var(--gold-600); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">Compliance</div>
+                  <div style="font-weight: 600; color: var(--teal-900); font-size: 14px;">ANM 95/2022 + SUDEMA</div>
+                  <div style="font-size: 12px; color: var(--gray-600);">Documentação completa obrigatória</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cronograma -->
+            <div style="margin-bottom: 28px;">
+              <h3 style="font-family:var(--font-serif); font-size: 16px; font-weight: 700; color: var(--teal-900); margin-bottom: 14px;">📅 Cronograma</h3>
+              <div style="display:flex; gap: 0; align-items:stretch;">
+                <div style="flex:1; padding: 14px; background: var(--green-100); border-radius: var(--radius-md) 0 0 var(--radius-md);">
+                  <div style="font-size: 10px; font-weight: 700; color: var(--green-600); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px;">Etapa 1 — Aberta</div>
+                  <div style="font-weight: 600; color: var(--teal-900); font-size: 13px;">Coleta de propostas</div>
+                  <div style="font-size: 11px; color: var(--gray-700);">Até 03/Jun · 13 dias</div>
+                </div>
+                <div style="flex:1; padding: 14px; background: var(--gray-100);">
+                  <div style="font-size: 10px; font-weight: 700; color: var(--gray-600); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px;">Etapa 2</div>
+                  <div style="font-weight: 600; color: var(--teal-900); font-size: 13px;">Análise técnica</div>
+                  <div style="font-size: 11px; color: var(--gray-700);">04-15/Jun</div>
+                </div>
+                <div style="flex:1; padding: 14px; background: var(--gray-100);">
+                  <div style="font-size: 10px; font-weight: 700; color: var(--gray-600); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px;">Etapa 3</div>
+                  <div style="font-weight: 600; color: var(--teal-900); font-size: 13px;">Apresentações</div>
+                  <div style="font-size: 11px; color: var(--gray-700);">16-22/Jun</div>
+                </div>
+                <div style="flex:1; padding: 14px; background: var(--gray-100); border-radius: 0 var(--radius-md) var(--radius-md) 0;">
+                  <div style="font-size: 10px; font-weight: 700; color: var(--gray-600); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px;">Etapa 4</div>
+                  <div style="font-weight: 600; color: var(--teal-900); font-size: 13px;">Decisão final</div>
+                  <div style="font-size: 11px; color: var(--gray-700);">30/Jun</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Comprador responsável -->
+            <div style="margin-bottom: 28px; padding: 18px; background: var(--teal-50); border-radius: var(--radius-md); display:flex; align-items:center; gap: 16px;">
+              <div style="width:52px;height:52px;background:linear-gradient(135deg,var(--teal-700),var(--teal-500));color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;flex-shrink:0">CV</div>
+              <div style="flex:1">
+                <div style="font-weight: 600; color: var(--teal-900); margin-bottom: 2px;">Carlos Vilela</div>
+                <div style="font-size: 13px; color: var(--gray-700);">Gerente de Suprimentos · Vale S.A.</div>
+                <div style="font-size: 12px; color: var(--gray-600); margin-top: 4px;">📧 Mensagens via plataforma · 💼 LinkedIn verificado</div>
+              </div>
+              <button class="btn btn-outline btn-sm">Ver perfil →</button>
+            </div>
+
+            <!-- Concorrência -->
+            <div style="margin-bottom: 28px; padding: 18px; border: 1px solid var(--gold-500); border-radius: var(--radius-md); background: var(--gold-50);">
+              <div style="font-size: 11px; font-weight: 700; color: var(--gold-700); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">🎯 Inteligência competitiva</div>
+              <p style="font-size: 14px; color: var(--gray-800); line-height: 1.55;">
+                <strong>7 fornecedores</strong> já se candidataram. Você está na <strong style="color:var(--teal-800)">posição #2 em compatibilidade</strong> entre os candidatos.
+                Os outros candidatos com matching alto incluem Siemens (95%) e thyssenkrupp (88%).
+              </p>
+            </div>
+
+            <!-- CTA Final -->
+            <div style="display:flex; gap: 12px; padding-top: 24px; border-top: 1px solid var(--gray-200);">
+              <button class="btn btn-gold btn-lg" style="flex:1; padding: 16px;">
+                ✍️ Enviar minha proposta
+              </button>
+              <button class="btn btn-outline btn-lg" style="padding: 16px 24px;">
+                💬 Tirar dúvida
+              </button>
+              <button class="btn btn-ghost btn-lg" style="padding: 16px 24px;">
+                ⭐ Salvar
+              </button>
+            </div>
+
+          </div>
+        </main>
+      </div>
+    </div>
+  </section>
+
+  <div id="app-footer"></div>
+  <script src="assets/shared.js"></script>
+</body>
+</html>
