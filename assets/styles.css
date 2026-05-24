@@ -585,11 +585,45 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   transition: var(--transition);
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .company-card:hover {
   border-color: var(--teal-500);
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
+}
+
+/* ── MEMBRO FUNDADOR — Selo permanente IBRAM ── */
+.company-card.is-founder {
+  border-color: var(--gold-400);
+  background: linear-gradient(180deg, var(--gold-50) 0%, var(--white) 60px);
+  box-shadow: 0 1px 3px rgba(184, 134, 11, 0.08);
+}
+.company-card.is-founder:hover {
+  border-color: var(--gold-500);
+  box-shadow: 0 8px 24px rgba(184, 134, 11, 0.18);
+}
+.founder-ribbon {
+  background: linear-gradient(135deg, var(--gold-600), var(--gold-500));
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid var(--gold-400);
+}
+.founder-star {
+  font-size: 13px;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.15));
+}
+.company-card.is-founder .company-logo.verified {
+  background: var(--teal-900);
+  color: var(--gold-500);
+  box-shadow: 0 0 0 2px var(--gold-500), 0 0 0 4px var(--white);
 }
 .company-card-header {
   padding: 20px 20px 16px;

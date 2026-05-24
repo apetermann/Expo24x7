@@ -7,6 +7,7 @@
 const FORNECEDORES = [
   {
     id: 'sandvik-br',
+    membroFundador: true,
     nome: 'Sandvik do Brasil',
     sigla: 'S',
     categoria: 'Equipamentos e Maquinário Pesado',
@@ -22,6 +23,7 @@ const FORNECEDORES = [
   },
   {
     id: 'epiroc-br',
+    membroFundador: true,
     nome: 'Epiroc Brasil',
     sigla: 'E',
     categoria: 'Equipamentos e Maquinário Pesado',
@@ -37,6 +39,7 @@ const FORNECEDORES = [
   },
   {
     id: 'metso-outotec',
+    membroFundador: true,
     nome: 'Metso Brasil',
     sigla: 'M',
     categoria: 'Beneficiamento e Processamento',
@@ -52,6 +55,7 @@ const FORNECEDORES = [
   },
   {
     id: 'enaex-br',
+    membroFundador: true,
     nome: 'Enaex Brasil',
     sigla: 'EX',
     categoria: 'Insumos e Explosivos',
@@ -82,6 +86,7 @@ const FORNECEDORES = [
   },
   {
     id: 'siemens-mining',
+    membroFundador: true,
     nome: 'Siemens Mining',
     sigla: 'Si',
     categoria: 'Tecnologia e Automação',
@@ -97,6 +102,7 @@ const FORNECEDORES = [
   },
   {
     id: 'flsmidth-br',
+    membroFundador: true,
     nome: 'FLSmidth Brasil',
     sigla: 'F',
     categoria: 'Beneficiamento e Processamento',
@@ -112,6 +118,7 @@ const FORNECEDORES = [
   },
   {
     id: 'weir-minerals',
+    membroFundador: true,
     nome: 'Weir Minerals Brasil',
     sigla: 'W',
     categoria: 'Equipamentos e Maquinário Pesado',
@@ -142,6 +149,7 @@ const FORNECEDORES = [
   },
   {
     id: 'orica-br',
+    membroFundador: true,
     nome: 'Orica Brasil',
     sigla: 'O',
     categoria: 'Insumos e Explosivos',
@@ -157,6 +165,7 @@ const FORNECEDORES = [
   },
   {
     id: 'caterpillar-br',
+    membroFundador: true,
     nome: 'Caterpillar Brasil',
     sigla: 'C',
     categoria: 'Equipamentos e Maquinário Pesado',
