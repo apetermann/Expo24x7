@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour Executivo · Exposibram 24x7</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --teal-900: #0D2B35;
+      --teal-800: #143847;
+      --teal-700: #1A4D5C;
+      --teal-600: #1E5C6E;
+      --teal-500: #2E7D8C;
+      --teal-100: #E6F2F5;
+      --gold-700: #8B6914;
+      --gold-600: #B8860B;
+      --gold-500: #D4A843;
+      --gold-400: #E8C572;
+      --gold-100: #FDF6E3;
+      --green-600: #1B6B3A;
+      --green-500: #2E8B4E;
+      --white: #FFFFFF;
+      --off-white: #FAFAF7;
+      --gray-100: #F4F4F0;
+      --gray-200: #E8E8E2;
+      --gray-400: #9A9A92;
+      --gray-600: #5A5A55;
+      --gray-800: #2A2A28;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      height: 100%;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--teal-900);
+      color: var(--white);
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── BRAND HEADER (presente em todas as telas) ─── */
+    .brand-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      padding: 24px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+      pointer-events: none;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      pointer-events: auto;
+    }
+    .brand-ibram {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.5px;
+      line-height: 1;
+    }
+    .brand-ibram-sub {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold-400);
+      margin-top: 4px;
+    }
+    .brand-x {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--gold-500);
+      font-weight: 300;
+    }
+    .brand-expo {
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: -0.3px;
+      line-height: 1;
+    }
+    .brand-expo-sub {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold-400);
+      margin-top: 4px;
+    }
+    .header-meta {
+      pointer-events: auto;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .header-meta strong { color: var(--gold-500); font-weight: 600; }
+    .header-meta a.exit-link {
+      color: var(--white);
+      text-decoration: none;
+      padding: 8px 16px;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 100px;
+      font-size: 11px;
+      transition: all 0.2s ease;
+      letter-spacing: 1px;
+    }
+    .header-meta a.exit-link:hover { border-color: var(--gold-500); color: var(--gold-500); }
+
+    /* ─── SCENE CONTAINER ─── */
+    .scene {
+      position: absolute;
+      inset: 0;
+      display: none;
+      flex-direction: column;
+      padding: 110px 64px 100px 64px;
+      animation: sceneFade 0.6s ease;
+    }
+    .scene.active { display: flex; }
+    @keyframes sceneFade {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── NAVIGATION BAR ─── */
+    .nav-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to top, rgba(13, 43, 53, 0.95), transparent);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+    .nav-progress {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .nav-dot {
+      width: 38px;
+      height: 3px;
+      background: rgba(255,255,255,0.18);
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .nav-dot.active { background: var(--gold-500); width: 60px; }
+    .nav-dot:hover:not(.active) { background: rgba(255,255,255,0.4); }
+    .nav-counter {
+      font-size: 12px;
+      color: var(--gray-400);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .nav-counter strong { color: var(--white); font-weight: 700; font-size: 14px; }
+    .nav-buttons {
+      display: flex;
+      gap: 12px;
+    }
+    .nav-btn {
+      padding: 11px 24px;
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .nav-btn:hover { border-color: var(--gold-500); color: var(--gold-500); }
+    .nav-btn.primary {
+      background: var(--gold-500);
+      border-color: var(--gold-500);
+      color: var(--teal-900);
+    }
+    .nav-btn.primary:hover { background: var(--gold-400); border-color: var(--gold-400); }
+    .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SCENE 0 — OPENING                                                */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .scene-opening {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 64px;
+    }
+    .opening-eyebrow {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold-500);
+      margin-bottom: 32px;
+    }
+    .opening-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(48px, 7vw, 92px);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+      max-width: 1100px;
+    }
+    .opening-title em {
+      font-style: italic;
+      color: var(--gold-500);
+      font-weight: 400;
+    }
+    .opening-sub {
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--teal-100);
+      max-width: 720px;
+      line-height: 1.5;
+      margin-bottom: 56px;
+    }
+    .opening-meta {
+      display: flex;
+      gap: 48px;
+      justify-content: center;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 64px;
+    }
+    .opening-meta strong { color: var(--gold-400); font-weight: 600; }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SCENE LAYOUTS                                                    */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .scene-grid {
+      display: grid;
+      grid-template-columns: minmax(380px, 1fr) 2fr;
+      gap: 64px;
+      align-items: stretch;
+      flex: 1;
+      max-width: 1700px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Caption (lado esquerdo) */
+    .caption-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 32px 0;
+    }
+    .caption-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold-500);
+      margin-bottom: 24px;
+    }
+    .caption-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 4vw, 56px);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      margin-bottom: 28px;
+    }
+    .caption-title em { font-style: italic; color: var(--gold-500); font-weight: 400; }
+    .caption-divider {
+      width: 56px;
+      height: 3px;
+      background: var(--gold-500);
+      margin: 0 0 28px 0;
+    }
+    .caption-quote {
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 1.55;
+      color: var(--teal-100);
+      font-style: italic;
+      padding-left: 24px;
+      border-left: 3px solid var(--gold-500);
+      margin-bottom: 32px;
+    }
+    .caption-key {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 15px;
+      color: var(--white);
+      line-height: 1.5;
+    }
+    .caption-key-bullet {
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      background: var(--gold-500);
+      border-radius: 50%;
+      margin-top: 9px;
+    }
+    .caption-explore {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .caption-explore-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 12px;
+    }
+    .caption-explore-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      background: rgba(212, 168, 67, 0.12);
+      border: 1px solid rgba(212, 168, 67, 0.5);
+      color: var(--gold-500);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 100px;
+      transition: all 0.2s ease;
+    }
+    .caption-explore-btn:hover {
+      background: var(--gold-500);
+      color: var(--teal-900);
+      border-color: var(--gold-500);
+    }
+    .caption-explore-btn::after { content: "↗"; font-size: 16px; }
+
+    /* Visual panel (lado direito) */
+    .visual-panel {
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.08);
+      overflow: hidden;
+      color: var(--gray-800);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .visual-chrome {
+      display: flex;
+      align-items: center;
+      padding: 14px 20px;
+      background: var(--off-white);
+      border-bottom: 1px solid var(--gray-200);
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .visual-chrome-dot {
+      width: 11px; height: 11px; border-radius: 50%;
+      background: var(--gray-200);
+    }
+    .visual-chrome-url {
+      flex: 1;
+      text-align: center;
+      font-size: 12px;
+      color: var(--gray-600);
+      letter-spacing: 0.5px;
+      margin: 0 80px;
+      padding: 6px 14px;
+      background: var(--white);
+      border-radius: 100px;
+      border: 1px solid var(--gray-200);
+    }
+    .visual-chrome-url strong { color: var(--teal-900); }
+    .visual-body {
+      flex: 1;
+      overflow: auto;
+      padding: 32px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SCENE 1 — DIRETÓRIO                                              */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .diretorio-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 24px;
+      padding-bottom: 18px;
+      border-bottom: 2px solid var(--gray-100);
+    }
+    .diretorio-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--teal-900);
+    }
+    .diretorio-count {
+      font-size: 13px;
+      color: var(--gray-600);
+    }
+    .diretorio-count strong { color: var(--gold-600); font-size: 16px; font-weight: 700; }
+
+    .diretorio-filters {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .filter-chip {
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 500;
+      background: var(--gray-100);
+      color: var(--gray-600);
+      border: 1px solid var(--gray-200);
+    }
+    .filter-chip.active {
+      background: var(--teal-900);
+      color: var(--white);
+      border-color: var(--teal-900);
+    }
+    .filter-chip.featured {
+      background: var(--gold-100);
+      color: var(--gold-700);
+      border-color: var(--gold-400);
+    }
+
+    .empresa-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .empresa-card {
+      padding: 16px;
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      background: var(--white);
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .empresa-card.highlight {
+      border: 2px solid var(--gold-500);
+      background: var(--gold-50);
+    }
+    .empresa-card.highlight::before {
+      content: "Associado IBRAM";
+      position: absolute;
+      top: -8px;
+      right: 12px;
+      background: var(--gold-500);
+      color: var(--white);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .empresa-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: var(--teal-900);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .empresa-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--teal-900);
+      margin-bottom: 4px;
+    }
+    .empresa-cat {
+      font-size: 11px;
+      color: var(--gray-600);
+      margin-bottom: 8px;
+    }
+    .empresa-tags {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+    .empresa-tag {
+      font-size: 9px;
+      padding: 2px 6px;
+      background: var(--teal-100);
+      color: var(--teal-700);
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SCENE 2 — RFQ ATIVA                                              */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .rfq-header {
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+      border-bottom: 2px solid var(--gray-100);
+    }
+    .rfq-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-500);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .rfq-status-dot {
+      width: 7px; height: 7px;
+      background: white;
+      border-radius: 50%;
+      animation: pulse 2s ease infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.3); }
+    }
+    .rfq-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--teal-900);
+      margin-bottom: 6px;
+    }
+    .rfq-meta {
+      display: flex;
+      gap: 20px;
+      font-size: 12px;
+      color: var(--gray-600);
+    }
+    .rfq-meta strong { color: var(--teal-900); }
+
+    .rfq-section-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-600);
+      margin-bottom: 12px;
+    }
+
+    .mineradoras-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .mineradora-card {
+      padding: 16px;
+      border: 2px solid var(--teal-100);
+      border-radius: 10px;
+      background: var(--teal-50);
+    }
+    .mineradora-card.live {
+      border-color: var(--green-500);
+      background: var(--green-100);
+    }
+    .mineradora-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--teal-900);
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .mineradora-badge {
+      font-size: 9px;
+      padding: 2px 6px;
+      background: var(--green-600);
+      color: white;
+      border-radius: 4px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .mineradora-status {
+      font-size: 12px;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+    .mineradora-status strong { color: var(--green-600); font-weight: 700; }
+    .mineradora-time {
+      font-size: 10px;
+      color: var(--gray-400);
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .timeline-events {
+      background: var(--gray-100);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .timeline-event {
+      display: flex;
+      gap: 12px;
+      padding: 8px 0;
+      font-size: 12px;
+    }
+    .timeline-event:not(:last-child) { border-bottom: 1px solid var(--gray-200); }
+    .timeline-time {
+      flex-shrink: 0;
+      font-weight: 700;
+      color: var(--gold-600);
+      letter-spacing: 0.3px;
+      width: 64px;
+    }
+    .timeline-text {
+      color: var(--teal-900);
+    }
+    .timeline-text strong { color: var(--teal-900); font-weight: 700; }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SCENE 3 — INTELIGÊNCIA                                           */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .intel-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .intel-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--teal-900);
+    }
+    .intel-period {
+      font-size: 11px;
+      padding: 6px 12px;
+      background: var(--teal-100);
+      color: var(--teal-700);
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .kpi-tile {
+      padding: 14px;
+      background: linear-gradient(135deg, var(--teal-900), var(--teal-700));
+      color: white;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    .kpi-tile.gold {
+      background: linear-gradient(135deg, var(--gold-600), var(--gold-500));
+    }
+    .kpi-label {
+      font-size: 9px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .kpi-value {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .kpi-trend {
+      font-size: 10px;
+      font-weight: 600;
+      opacity: 0.9;
+    }
+    .kpi-trend.up::before { content: "▲ "; }
+
+    .charts-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 14px;
+    }
+    .chart-card {
+      padding: 16px;
+      background: var(--off-white);
+      border-radius: 10px;
+      border: 1px solid var(--gray-200);
+    }
+    .chart-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold-600);
+      margin-bottom: 14px;
+    }
+    .bar-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .bar-row {
+      display: grid;
+      grid-template-columns: 140px 1fr 50px;
+      gap: 10px;
+      align-items: center;
+      font-size: 11px;
+    }
+    .bar-row-name {
+      font-weight: 600;
+      color: var(--teal-900);
+    }
+    .bar-row-track {
+      height: 10px;
+      background: var(--gray-200);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .bar-row-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold-500), var(--gold-600));
+      border-radius: 5px;
+    }
+    .bar-row-val {
+      text-align: right;
+      font-weight: 700;
+      color: var(--teal-900);
+    }
+
+    .heatmap {
+      display: grid;
+      grid-template-columns: 70px repeat(5, 1fr);
+      gap: 3px;
+      font-size: 9px;
+    }
+    .heatmap-row-label,
+    .heatmap-col-label {
+      padding: 6px 4px;
+      font-weight: 700;
+      color: var(--gray-600);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 8px;
+    }
+    .heatmap-cell {
+      aspect-ratio: 1;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--white);
+      font-size: 10px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SCENE 4 — PERFIL EMPRESA                                         */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .perfil-header {
+      display: flex;
+      gap: 20px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--gray-100);
+    }
+    .perfil-logo {
+      width: 80px;
+      height: 80px;
+      background: var(--teal-900);
+      color: var(--white);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .perfil-info { flex: 1; }
+    .perfil-name {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--teal-900);
+      margin-bottom: 4px;
+    }
+    .perfil-tagline {
+      font-size: 13px;
+      color: var(--gray-600);
+      margin-bottom: 10px;
+    }
+    .perfil-badges {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .perfil-badge {
+      font-size: 10px;
+      padding: 3px 8px;
+      background: var(--teal-100);
+      color: var(--teal-700);
+      border-radius: 4px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+    .perfil-badge.gold {
+      background: var(--gold-500);
+      color: var(--white);
+    }
+
+    .perfil-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .perfil-stat {
+      padding: 10px 12px;
+      background: var(--gray-100);
+      border-radius: 8px;
+      text-align: center;
+    }
+    .perfil-stat-value {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--teal-900);
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+    .perfil-stat-label {
+      font-size: 9px;
+      color: var(--gray-600);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .perfil-section { margin-bottom: 18px; }
+    .perfil-section-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-600);
+      margin-bottom: 10px;
+    }
+
+    .produtos-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    .produto-chip {
+      padding: 10px;
+      background: var(--off-white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--teal-900);
+      line-height: 1.3;
+    }
+
+    .cases-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .case-row {
+      display: flex;
+      gap: 10px;
+      padding: 10px;
+      background: var(--off-white);
+      border-radius: 8px;
+      border-left: 3px solid var(--gold-500);
+    }
+    .case-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      background: var(--teal-100);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+    .case-info {
+      flex: 1;
+      font-size: 11px;
+    }
+    .case-cliente {
+      font-weight: 700;
+      color: var(--teal-900);
+      margin-bottom: 2px;
+    }
+    .case-desc {
+      color: var(--gray-600);
+      line-height: 1.4;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SCENE 5 — FRASE ÂNCORA (CLOSING)                                 */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .scene-closing {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 110px 80px 100px 80px;
+    }
+    .closing-eyebrow {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold-500);
+      margin-bottom: 40px;
+    }
+    .closing-phrase {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3.4vw, 48px);
+      font-weight: 400;
+      line-height: 1.3;
+      letter-spacing: -0.5px;
+      color: var(--white);
+      max-width: 1280px;
+      margin-bottom: 64px;
+    }
+    .closing-phrase strong {
+      color: var(--gold-500);
+      font-weight: 700;
+      font-style: italic;
+    }
+    .closing-divider {
+      width: 80px;
+      height: 3px;
+      background: var(--gold-500);
+      margin: 0 auto 56px auto;
+    }
+    .closing-numbers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+      max-width: 1000px;
+      width: 100%;
+      margin-bottom: 56px;
+    }
+    .closing-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 36px;
+      background: var(--gold-500);
+      color: var(--teal-900);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      border-radius: 100px;
+      transition: all 0.2s ease;
+    }
+    .closing-cta:hover {
+      background: var(--gold-400);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(212, 168, 67, 0.3);
+    }
+    .closing-cta::after { content: "→"; font-size: 18px; }
+    .closing-num {
+      text-align: center;
+    }
+    .closing-num-value {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 4vw, 56px);
+      font-weight: 700;
+      color: var(--gold-500);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+    .closing-num-label {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--teal-100);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* ─── Help button ─── */
+    .help-toggle {
+      position: fixed;
+      bottom: 95px;
+      right: 30px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--white);
+      font-size: 14px;
+      cursor: pointer;
+      z-index: 200;
+      transition: all 0.2s ease;
+    }
+    .help-toggle:hover { background: var(--gold-500); border-color: var(--gold-500); color: var(--teal-900); }
+
+    .help-panel {
+      position: fixed;
+      bottom: 142px;
+      right: 30px;
+      background: var(--teal-800);
+      border: 1px solid rgba(212, 168, 67, 0.3);
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-size: 12px;
+      color: var(--teal-100);
+      z-index: 200;
+      display: none;
+      line-height: 1.7;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    }
+    .help-panel.open { display: block; }
+    .help-panel kbd {
+      display: inline-block;
+      padding: 2px 8px;
+      background: rgba(212, 168, 67, 0.15);
+      color: var(--gold-500);
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 11px;
+      font-weight: 700;
+      margin: 0 2px;
+    }
+
+    /* Hide visual cursor on print */
+    @media print {
+      body { background: var(--white); color: var(--teal-900); }
+      .nav-bar, .help-toggle, .help-panel { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── BRAND HEADER (sempre visível) ─── -->
+  <div class="brand-header">
+    <div class="brand-logo">
+      <div>
+        <div class="brand-ibram">IBRAM</div>
+        <span class="brand-ibram-sub">Instituto Brasileiro de Mineração</span>
+      </div>
+      <div class="brand-x">×</div>
+      <div>
+        <div class="brand-expo">Exposibram 24x7</div>
+        <span class="brand-expo-sub">Plataforma Institucional</span>
+      </div>
+    </div>
+    <div class="header-meta">
+      <span>Tour Executivo · <strong>5 minutos</strong></span>
+      <a href="index.html" class="exit-link">← Sair do Tour</a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- SCENE 0 — OPENING                                                -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <div class="scene scene-opening active" data-scene="0">
+    <div class="opening-eyebrow">Demonstração Executiva · Maio 2026</div>
+    <h1 class="opening-title">
+      A infraestrutura digital<br>
+      <em>permanente</em> da mineração brasileira.
+    </h1>
+    <p class="opening-sub">
+      Cinco minutos. Quatro telas. Uma decisão.
+    </p>
+    <div class="opening-meta">
+      <div>Apresentado por <strong>DeCarbonMine</strong></div>
+      <div>Sob licença de <strong>IBRAM</strong></div>
+      <div>Maio de <strong>2026</strong></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- SCENE 1 — DIRETÓRIO                                              -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <div class="scene" data-scene="1">
+    <div class="scene-grid">
+      <div class="caption-panel">
+        <div class="caption-eyebrow">Tela 1 de 5 · O Ativo</div>
+        <h2 class="caption-title">A base IBRAM <em>ganha vida digital</em>.</h2>
+        <div class="caption-divider"></div>
+        <p class="caption-quote">
+          "Pablo, esses são os associados do IBRAM hoje. A plataforma já parte com eles dentro."
+        </p>
+        <div class="caption-key">
+          <div class="caption-key-bullet"></div>
+          <div>2.850 empresas cadastradas no Day 1 — não é vaporware</div>
+        </div>
+        <div class="caption-key">
+          <div class="caption-key-bullet"></div>
+          <div>Cada associado ganha presença digital institucional</div>
+        </div>
+        <div class="caption-key">
+          <div class="caption-key-bullet"></div>
+          <div>Selo "Associado IBRAM" como diferencial verificável</div>
+        </div>
+        <div class="caption-explore">
+          <div class="caption-explore-label">Após o tour</div>
+          <a href="diretorio.html" class="caption-explore-btn">Explorar diretório completo</a>
+        </div>
+      </div>
+
+      <div class="visual-panel">
+        <div class="visual-chrome">
+          <div class="visual-chrome-dot"></div>
+          <div class="visual-chrome-dot"></div>
+          <div class="visual-chrome-dot"></div>
+          <div class="visual-chrome-url"><strong>exposibram24x7.com.br</strong>/diretorio</div>
+        </div>
+        <div class="visual-body">
+          <div class="diretorio-header">
+            <div>
+              <div class="diretorio-title">Diretório de Empresas</div>
+              <div class="diretorio-count">Mostrando <strong>2.850</strong> empresas associadas ao IBRAM</div>
+            </div>
+          </div>
+          <div class="diretorio-filters">
+            <div class="filter-chip active">Todas as categorias</div>
+            <div class="filter-chip featured">★ Membros Fundadores</div>
+            <div class="filter-chip">Equipamentos</div>
+            <div class="filter-chip">Tecnologia</div>
+            <div class="filter-chip">ESG</div>
+            <div class="filter-chip">Beneficiamento</div>
+          </div>
+          <div class="empresa-grid">
+            <div class="empresa-card highlight">
+              <div class="empresa-logo">SA</div>
+              <div class="empresa-name">Sandvik Mining</div>
+              <div class="empresa-cat">Equipamentos · Suécia/Brasil</div>
+              <div class="empresa-tags"><span class="empresa-tag">ISO 14001</span><span class="empresa-tag">Premium</span></div>
+            </div>
+            <div class="empresa-card highlight">
+              <div class="empresa-logo">EP</div>
+              <div class="empresa-name">Epiroc Brasil</div>
+              <div class="empresa-cat">Perfuração · Brasil</div>
+              <div class="empresa-tags"><span class="empresa-tag">ISO 9001</span><span class="empresa-tag">Premium</span></div>
+            </div>
+            <div class="empresa-card highlight">
+              <div class="empresa-logo">MT</div>
+              <div class="empresa-name">Metso Outotec</div>
+              <div class="empresa-cat">Beneficiamento · Finlândia/Brasil</div>
+              <div class="empresa-tags"><span class="empresa-tag">B Corp</span><span class="empresa-tag">Premium</span></div>
+            </div>
+            <div class="empresa-card highlight">
+              <div class="empresa-logo">CT</div>
+              <div class="empresa-name">Caterpillar Brasil</div>
+              <div class="empresa-cat">Equipamentos · EUA/Brasil</div>
+              <div class="empresa-tags"><span class="empresa-tag">Tier 1</span><span class="empresa-tag">Premium</span></div>
+            </div>
+            <div class="empresa-card highlight">
+              <div class="empresa-logo">WE</div>
+              <div class="empresa-name">Weir Minerals</div>
+              <div class="empresa-cat">Bombas e Válvulas · Escócia/Brasil</div>
+              <div class="empresa-tags"><span class="empresa-tag">ISO 14001</span><span class="empresa-tag">Premium</span></div>
+            </div>
+            <div class="empresa-card highlight">
+              <div class="empresa-logo">AC</div>
+              <div class="empresa-name">Atlas Copco</div>
+              <div class="empresa-cat">Compressores · Suécia/Brasil</div>
+              <div class="empresa-tags"><span class="empresa-tag">ESG</span><span class="empresa-tag">Premium</span></div>
+            </div>
+            <div class="empresa-card highlight">
+              <div class="empresa-logo">FL</div>
+              <div class="empresa-name">FLSmidth Brasil</div>
+              <div class="empresa-cat">Processamento · Dinamarca/BR</div>
+              <div class="empresa-tags"><span class="empresa-tag">ISO 9001</span><span class="empresa-tag">Premium</span></div>
+            </div>
+            <div class="empresa-card highlight">
+              <div class="empresa-logo">AB</div>
+              <div class="empresa-name">ABB Mining</div>
+              <div class="empresa-cat">Automação · Suíça/Brasil</div>
+              <div class="empresa-tags"><span class="empresa-tag">Tier 1</span><span class="empresa-tag">Premium</span></div>
+            </div>
+            <div class="empresa-card highlight">
+              <div class="empresa-logo">SI</div>
+              <div class="empresa-name">Siemens Mining</div>
+              <div class="empresa-cat">Tecnologia · Alemanha/Brasil</div>
+              <div class="empresa-tags"><span class="empresa-tag">Tier 1</span><span class="empresa-tag">Premium</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- SCENE 2 — RFQ ATIVA                                              -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <div class="scene" data-scene="2">
+    <div class="scene-grid">
+      <div class="caption-panel">
+        <div class="caption-eyebrow">Tela 2 de 5 · A Tese</div>
+        <h2 class="caption-title">Mineradoras conectadas <em>365 dias por ano</em>.</h2>
+        <div class="caption-divider"></div>
+        <p class="caption-quote">
+          "Isso é o evento Exposibram acontecendo às 14h de uma terça-feira qualquer."
+        </p>
+        <div class="caption-key">
+          <div class="caption-key-bullet"></div>
+          <div>Vale, Anglo American e CSN no mesmo deal room</div>
+        </div>
+        <div class="caption-key">
+          <div class="caption-key-bullet"></div>
+          <div>R$ 12-18 mi em compras direcionadas, transparente</div>
+        </div>
+        <div class="caption-key">
+          <div class="caption-key-bullet"></div>
+          <div>Pico de relacionamento da feira, agora contínuo</div>
+        </div>
+        <div class="caption-explore">
+          <div class="caption-explore-label">Após o tour</div>
+          <a href="rfq.html" class="caption-explore-btn">Ver oportunidades em aberto</a>
+        </div>
+      </div>
+
+      <div class="visual-panel">
+        <div class="visual-chrome">
+          <div class="visual-chrome-dot"></div>
+          <div class="visual-chrome-dot"></div>
+          <div class="visual-chrome-dot"></div>
+          <div class="visual-chrome-url"><strong>exposibram24x7.com.br</strong>/rfq/RFQ-2026-0387</div>
+        </div>
+        <div class="visual-body">
+          <div class="rfq-header">
+            <div class="rfq-status">
+              <div class="rfq-status-dot"></div>
+              <span>RFQ Ativa · Em andamento agora</span>
+            </div>
+            <div class="rfq-title">Monitoramento de Barragens · 4 Estados · ANM 95/2022</div>
+            <div class="rfq-meta">
+              <div>Categoria: <strong>Monitoramento e Sensoriamento</strong></div>
+              <div>Valor estimado: <strong>R$ 12-18 mi</strong></div>
+              <div>Prazo: <strong>14 dias úteis</strong></div>
+            </div>
+          </div>
+
+          <div class="rfq-section-title">Mineradoras participando desta rodada</div>
+          <div class="mineradoras-grid">
+            <div class="mineradora-card live">
+              <div class="mineradora-name">
+                Anglo American
+                <span class="mineradora-badge">LIVE</span>
+              </div>
+              <div class="mineradora-status"><strong>Respondeu</strong> · 5 propostas recebidas</div>
+              <div class="mineradora-time">Última atividade há 2h</div>
+            </div>
+            <div class="mineradora-card">
+              <div class="mineradora-name">Vale S.A.</div>
+              <div class="mineradora-status"><strong>Convidou 15 fornecedores</strong> · aguardando</div>
+              <div class="mineradora-time">Convites enviados há 6h</div>
+            </div>
+            <div class="mineradora-card">
+              <div class="mineradora-name">CSN Mineração</div>
+              <div class="mineradora-status"><strong>Call agendada</strong> · amanhã 10h</div>
+              <div class="mineradora-time">Agendamento há 1h</div>
+            </div>
+          </div>
+
+          <div class="rfq-section-title">Timeline de atividade · últimas 24h</div>
+          <div class="timeline-events">
+            <div class="timeline-event">
+              <div class="timeline-time">14:23</div>
+              <div class="timeline-text">Anglo American agendou call de avaliação técnica com <strong>Vale Soluções Ambientais</strong></div>
+            </div>
+            <div class="timeline-event">
+              <div class="timeline-time">12:47</div>
+              <div class="timeline-text"><strong>Sandvik Mining</strong> submeteu proposta técnica para Anglo</div>
+            </div>
+            <div class="timeline-event">
+              <div class="timeline-time">11:15</div>
+              <div class="timeline-text">CSN Mineração visualizou os perfis de <strong>5 fornecedores Premium</strong></div>
+            </div>
+            <div class="timeline-event">
+              <div class="timeline-time">09:02</div>
+              <div class="timeline-text">Vale S.A. publicou convites para <strong>15 fornecedores</strong> homologados</div>
+            </div>
+            <div class="timeline-event">
+              <div class="timeline-time">Ontem</div>
+              <div class="timeline-text">Anglo American publicou a RFQ — recomendação IA gerou 8 matches</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- SCENE 3 — INTELIGÊNCIA SETORIAL                                  -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <div class="scene" data-scene="3">
+    <div class="scene-grid">
+      <div class="caption-panel">
+        <div class="caption-eyebrow">Tela 3 de 5 · O Poder Institucional</div>
+        <h2 class="caption-title">Dados que <em>nenhum outro órgão</em> do setor tem.</h2>
+        <div class="caption-divider"></div>
+        <p class="caption-quote">
+          "A cada mês, o IBRAM passa a ter dados que hoje ninguém tem sobre o próprio setor."
+        </p>
+        <div class="caption-key">
+          <div class="caption-key-bullet"></div>
+          <div>Inteligência setorial proprietária do IBRAM</div>
+        </div>
+        <div class="caption-key">
+          <div class="caption-key-bullet"></div>
+          <div>Posicionamento institucional fortalecido em Brasília</div>
+        </div>
+        <div class="caption-key">
+          <div class="caption-key-bullet"></div>
+          <div>R$ 50-500k por mineradora em assinatura de Intel</div>
+        </div>
+        <div class="caption-explore">
+          <div class="caption-explore-label">Após o tour</div>
+          <a href="inteligencia.html" class="caption-explore-btn">Abrir Módulo Inteligência</a>
+        </div>
+      </div>
+
+      <div class="visual-panel">
+        <div class="visual-chrome">
+          <div class="visual-chrome-dot"></div>
+          <div class="visual-chrome-dot"></div>
+          <div class="visual-chrome-dot"></div>
+          <div class="visual-chrome-url"><strong>exposibram24x7.com.br</strong>/inteligencia</div>
+        </div>
+        <div class="visual-body">
+          <div class="intel-header-row">
+            <div class="intel-title">Painel de Inteligência Setorial</div>
+            <div class="intel-period">Q1 · 2026</div>
+          </div>
+
+          <div class="kpi-row">
+            <div class="kpi-tile">
+              <div class="kpi-label">RFQs Publicadas</div>
+              <div class="kpi-value">87</div>
+              <div class="kpi-trend up">38% vs. Q4'25</div>
+            </div>
+            <div class="kpi-tile">
+              <div class="kpi-label">GMV Influenciado</div>
+              <div class="kpi-value">R$ 312mi</div>
+              <div class="kpi-trend up">42% vs. Q4'25</div>
+            </div>
+            <div class="kpi-tile gold">
+              <div class="kpi-label">Fornecedores Ativos</div>
+              <div class="kpi-value">847</div>
+              <div class="kpi-trend up">22% vs. Q4'25</div>
+            </div>
+            <div class="kpi-tile">
+              <div class="kpi-label">Tempo Médio RFQ</div>
+              <div class="kpi-value">8d</div>
+              <div class="kpi-trend up">vs. 23d off-platform</div>
+            </div>
+          </div>
+
+          <div class="charts-grid">
+            <div class="chart-card">
+              <div class="chart-title">Top Categorias por GMV — Q1 2026</div>
+              <div class="bar-list">
+                <div class="bar-row">
+                  <div class="bar-row-name">Monit. Barragens</div>
+                  <div class="bar-row-track"><div class="bar-row-fill" style="width: 92%"></div></div>
+                  <div class="bar-row-val">R$ 87mi</div>
+                </div>
+                <div class="bar-row">
+                  <div class="bar-row-name">Equipamentos LHD</div>
+                  <div class="bar-row-track"><div class="bar-row-fill" style="width: 78%"></div></div>
+                  <div class="bar-row-val">R$ 64mi</div>
+                </div>
+                <div class="bar-row">
+                  <div class="bar-row-name">Automação Mina</div>
+                  <div class="bar-row-track"><div class="bar-row-fill" style="width: 58%"></div></div>
+                  <div class="bar-row-val">R$ 49mi</div>
+                </div>
+                <div class="bar-row">
+                  <div class="bar-row-name">ESG/Descarboniz.</div>
+                  <div class="bar-row-track"><div class="bar-row-fill" style="width: 48%"></div></div>
+                  <div class="bar-row-val">R$ 41mi</div>
+                </div>
+                <div class="bar-row">
+                  <div class="bar-row-name">Beneficiamento</div>
+                  <div class="bar-row-track"><div class="bar-row-fill" style="width: 38%"></div></div>
+                  <div class="bar-row-val">R$ 32mi</div>
+                </div>
+                <div class="bar-row">
+                  <div class="bar-row-name">Tailings Mgmt</div>
+                  <div class="bar-row-track"><div class="bar-row-fill" style="width: 28%"></div></div>
+                  <div class="bar-row-val">R$ 24mi</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="chart-card">
+              <div class="chart-title">Heat Map · Mineradora × Categoria</div>
+              <div class="heatmap">
+                <div class="heatmap-row-label"></div>
+                <div class="heatmap-col-label">Barr.</div>
+                <div class="heatmap-col-label">LHD</div>
+                <div class="heatmap-col-label">Auto.</div>
+                <div class="heatmap-col-label">ESG</div>
+                <div class="heatmap-col-label">Benef.</div>
+
+                <div class="heatmap-row-label">Vale</div>
+                <div class="heatmap-cell" style="background: #0D2B35">12</div>
+                <div class="heatmap-cell" style="background: #1A4D5C">8</div>
+                <div class="heatmap-cell" style="background: #2E7D8C">6</div>
+                <div class="heatmap-cell" style="background: #1A4D5C">9</div>
+                <div class="heatmap-cell" style="background: #2E7D8C">5</div>
+
+                <div class="heatmap-row-label">Anglo</div>
+                <div class="heatmap-cell" style="background: #1A4D5C">7</div>
+                <div class="heatmap-cell" style="background: #1E5C6E">5</div>
+                <div class="heatmap-cell" style="background: #0D2B35">10</div>
+                <div class="heatmap-cell" style="background: #1A4D5C">8</div>
+                <div class="heatmap-cell" style="background: #5A9FAE">3</div>
+
+                <div class="heatmap-row-label">CSN</div>
+                <div class="heatmap-cell" style="background: #2E7D8C">4</div>
+                <div class="heatmap-cell" style="background: #1A4D5C">7</div>
+                <div class="heatmap-cell" style="background: #5A9FAE">2</div>
+                <div class="heatmap-cell" style="background: #2E7D8C">5</div>
+                <div class="heatmap-cell" style="background: #1A4D5C">7</div>
+
+                <div class="heatmap-row-label">Samarco</div>
+                <div class="heatmap-cell" style="background: #0D2B35">11</div>
+                <div class="heatmap-cell" style="background: #5A9FAE">2</div>
+                <div class="heatmap-cell" style="background: #2E7D8C">4</div>
+                <div class="heatmap-cell" style="background: #1A4D5C">6</div>
+                <div class="heatmap-cell" style="background: #5A9FAE">3</div>
+
+                <div class="heatmap-row-label">Kinross</div>
+                <div class="heatmap-cell" style="background: #2E7D8C">3</div>
+                <div class="heatmap-cell" style="background: #2E7D8C">4</div>
+                <div class="heatmap-cell" style="background: #1A4D5C">6</div>
+                <div class="heatmap-cell" style="background: #0D2B35">9</div>
+                <div class="heatmap-cell" style="background: #2E7D8C">4</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- SCENE 4 — PERFIL EMPRESA                                         -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <div class="scene" data-scene="4">
+    <div class="scene-grid">
+      <div class="caption-panel">
+        <div class="caption-eyebrow">Tela 4 de 5 · O Benefício aos Associados</div>
+        <h2 class="caption-title">Cada associado ganha <em>presença digital institucional</em>.</h2>
+        <div class="caption-divider"></div>
+        <p class="caption-quote">
+          "Cada um dos 2.850 associados do IBRAM ganha isso de graça no Day 1. Para muitos, é a primeira presença digital institucional que vão ter na vida."
+        </p>
+        <div class="caption-key">
+          <div class="caption-key-bullet"></div>
+          <div>O projeto não rouba valor — distribui valor aos associados</div>
+        </div>
+        <div class="caption-key">
+          <div class="caption-key-bullet"></div>
+          <div>Argumento natural para o board do IBRAM</div>
+        </div>
+        <div class="caption-key">
+          <div class="caption-key-bullet"></div>
+          <div>Selo institucional verificável de credibilidade</div>
+        </div>
+        <div class="caption-explore">
+          <div class="caption-explore-label">Após o tour</div>
+          <a href="empresa.html" class="caption-explore-btn">Ver perfil Sandvik completo</a>
+        </div>
+      </div>
+
+      <div class="visual-panel">
+        <div class="visual-chrome">
+          <div class="visual-chrome-dot"></div>
+          <div class="visual-chrome-dot"></div>
+          <div class="visual-chrome-dot"></div>
+          <div class="visual-chrome-url"><strong>exposibram24x7.com.br</strong>/empresa/sandvik-mining</div>
+        </div>
+        <div class="visual-body">
+          <div class="perfil-header">
+            <div class="perfil-logo">SA</div>
+            <div class="perfil-info">
+              <div class="perfil-name">Sandvik Mining and Rock Solutions</div>
+              <div class="perfil-tagline">Equipamentos e tecnologia para mineração subterrânea e a céu aberto · Suécia / Brasil</div>
+              <div class="perfil-badges">
+                <span class="perfil-badge gold">★ Membro Fundador</span>
+                <span class="perfil-badge">Homologado IBRAM</span>
+                <span class="perfil-badge">ISO 14001</span>
+                <span class="perfil-badge">ISO 9001</span>
+                <span class="perfil-badge">Tier 1</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="perfil-stats">
+            <div class="perfil-stat">
+              <div class="perfil-stat-value">847</div>
+              <div class="perfil-stat-label">Visualizações 30d</div>
+            </div>
+            <div class="perfil-stat">
+              <div class="perfil-stat-value">23</div>
+              <div class="perfil-stat-label">Leads Qualificados</div>
+            </div>
+            <div class="perfil-stat">
+              <div class="perfil-stat-value">8</div>
+              <div class="perfil-stat-label">RFQs Convidadas</div>
+            </div>
+            <div class="perfil-stat">
+              <div class="perfil-stat-value">94</div>
+              <div class="perfil-stat-label">Match Score IA</div>
+            </div>
+          </div>
+
+          <div class="perfil-section">
+            <div class="perfil-section-title">Produtos e Soluções · 28 itens</div>
+            <div class="produtos-row">
+              <div class="produto-chip">LHD Elétrico Toro™</div>
+              <div class="produto-chip">Perfuratrizes Subterrâneas</div>
+              <div class="produto-chip">Caminhões Autônomos</div>
+              <div class="produto-chip">Sandvik AutoMine®</div>
+            </div>
+          </div>
+
+          <div class="perfil-section">
+            <div class="perfil-section-title">Cases Verificados · últimos 24 meses</div>
+            <div class="cases-list">
+              <div class="case-row">
+                <div class="case-icon">⚙️</div>
+                <div class="case-info">
+                  <div class="case-cliente">Vale · Mina de Brucutu (MG)</div>
+                  <div class="case-desc">Substituição da frota de LHD por modelo elétrico — redução de 78% das emissões diretas</div>
+                </div>
+              </div>
+              <div class="case-row">
+                <div class="case-icon">🚛</div>
+                <div class="case-info">
+                  <div class="case-cliente">Anglo American · Minas-Rio (MG)</div>
+                  <div class="case-desc">Implementação de AutoMine® em mina a céu aberto — aumento de 22% em produtividade</div>
+                </div>
+              </div>
+              <div class="case-row">
+                <div class="case-icon">⛏️</div>
+                <div class="case-info">
+                  <div class="case-cliente">Kinross · Paracatu (MG)</div>
+                  <div class="case-desc">Perfuratrizes de superfície DR410i — operação 24/7 com telemetria em tempo real</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- SCENE 5 — FRASE ÂNCORA                                           -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <div class="scene scene-closing" data-scene="5">
+    <div class="closing-eyebrow">Tela 5 de 5 · A Decisão</div>
+    <p class="closing-phrase">
+      O IBRAM passa de associação que organiza um evento por ano para <strong>proprietária da infraestrutura digital permanente</strong> do setor mineral brasileiro — com receita recorrente, dados próprios, e <strong>equity em um ativo que pode valer R$ 200-400 milhões em 5 anos</strong>.
+    </p>
+    <div class="closing-divider"></div>
+    <div class="closing-numbers">
+      <div class="closing-num">
+        <div class="closing-num-value">2.850</div>
+        <div class="closing-num-label">Associados<br>com presença digital Day 1</div>
+      </div>
+      <div class="closing-num">
+        <div class="closing-num-value">365×</div>
+        <div class="closing-num-label">Dias por ano<br>de conexão contínua</div>
+      </div>
+      <div class="closing-num">
+        <div class="closing-num-value">R$ 200-400mi</div>
+        <div class="closing-num-label">Valuation potencial<br>no Ano 5</div>
+      </div>
+    </div>
+    <a href="index.html" class="closing-cta">Explorar a Plataforma Completa</a>
+  </div>
+
+  <!-- ─── NAVEGAÇÃO ─── -->
+  <div class="nav-bar">
+    <div class="nav-progress">
+      <div class="nav-dot active" data-go="0"></div>
+      <div class="nav-dot" data-go="1"></div>
+      <div class="nav-dot" data-go="2"></div>
+      <div class="nav-dot" data-go="3"></div>
+      <div class="nav-dot" data-go="4"></div>
+      <div class="nav-dot" data-go="5"></div>
+    </div>
+    <div class="nav-counter">
+      <strong id="curr">1</strong> / 6
+    </div>
+    <div class="nav-buttons">
+      <button class="nav-btn" id="prev" disabled>← Anterior</button>
+      <button class="nav-btn primary" id="next">Iniciar →</button>
+    </div>
+  </div>
+
+  <!-- ─── HELP ─── -->
+  <button class="help-toggle" id="help-toggle" title="Atalhos de teclado">?</button>
+  <div class="help-panel" id="help-panel">
+    <div style="font-weight:700;color:var(--gold-500);margin-bottom:8px;font-size:11px;letter-spacing:1.5px;">ATALHOS</div>
+    <div><kbd>→</kbd> <kbd>Espaço</kbd> Próxima tela</div>
+    <div><kbd>←</kbd> Tela anterior</div>
+    <div><kbd>F</kbd> Tela cheia</div>
+    <div><kbd>1</kbd>-<kbd>6</kbd> Pular para tela</div>
+    <div><kbd>ESC</kbd> Sair de tela cheia</div>
+  </div>
+
+  <script>
+    const TOTAL_SCENES = 6;
+    let currentScene = 0;
+    const scenes = document.querySelectorAll('.scene');
+    const dots = document.querySelectorAll('.nav-dot');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    const counter = document.getElementById('curr');
+
+    const BUTTON_LABELS = {
+      0: 'Iniciar →',
+      5: 'Reiniciar ⟲'
+    };
+
+    function goToScene(idx) {
+      if (idx < 0 || idx >= TOTAL_SCENES) return;
+      scenes.forEach((s, i) => s.classList.toggle('active', i === idx));
+      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+      counter.textContent = idx + 1;
+      currentScene = idx;
+      prevBtn.disabled = idx === 0;
+      nextBtn.textContent = BUTTON_LABELS[idx] || 'Próxima →';
+    }
+
+    nextBtn.addEventListener('click', () => {
+      if (currentScene === TOTAL_SCENES - 1) goToScene(0);
+      else goToScene(currentScene + 1);
+    });
+    prevBtn.addEventListener('click', () => goToScene(currentScene - 1));
+    dots.forEach(d => d.addEventListener('click', () => goToScene(parseInt(d.dataset.go))));
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextBtn.click(); }
+      else if (e.key === 'ArrowLeft') { prevBtn.click(); }
+      else if (e.key === 'f' || e.key === 'F') {
+        if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+        else document.exitFullscreen();
+      }
+      else if (/^[1-6]$/.test(e.key)) goToScene(parseInt(e.key) - 1);
+    });
+
+    const helpToggle = document.getElementById('help-toggle');
+    const helpPanel = document.getElementById('help-panel');
+    helpToggle.addEventListener('click', () => helpPanel.classList.toggle('open'));
+    document.addEventListener('click', e => {
+      if (!helpPanel.contains(e.target) && !helpToggle.contains(e.target)) helpPanel.classList.remove('open');
+    });
+  </script>
+</body>
+</html>

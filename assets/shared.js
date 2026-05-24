@@ -392,6 +392,7 @@ function renderHeader(activeNav = '') {
           <a href="rodadas.html" class="nav-link ${activeNav==='rodadas'?'active':''}">Rodadas Digitais</a>
           <a href="inteligencia.html" class="nav-link ${activeNav==='intel'?'active':''}">Inteligência</a>
           <a href="conteudo.html" class="nav-link ${activeNav==='conteudo'?'active':''}">Conteúdo</a>
+          <a href="demo.html" class="nav-link tour" title="Tour guiado de 5 minutos para apresentações executivas">Tour Executivo</a>
         </nav>
         <div class="header-actions">
           <button class="btn-icon" title="Notificações" style="position:relative">
