@@ -29,7 +29,7 @@ Este repositório contém um **MVP visual navegável** da plataforma Exposibram 
 
 | Camada | Função | Monetização |
 |---|---|---|
-| **1. Diretório Inteligente** | Base verificada de 2.850+ empresas da cadeia produtiva | Foundation — sem cobrança direta |
+| **1. Diretório Inteligente** | Base verificada de 315 associados IBRAM cobrindo toda a cadeia produtiva da mineração brasileira | Foundation — sem cobrança direta |
 | **2. Motor de Matchmaking** | Conexão automática demanda × oferta + Rodadas digitais semanais | Tickets por rodada (R$ 1.000-1.800) |
 | **3. Marketplace Comercial** | Vitrine, destaque, leads, homologação express | Assinaturas + upsells (R$ 1.500-5.800/mês) |
 | **4. Inteligência Setorial** | Relatórios trimestrais + dashboards + módulo ESG/SBCE | Relatórios avulsos + plano Enterprise |
