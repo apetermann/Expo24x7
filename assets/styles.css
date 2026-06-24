@@ -193,7 +193,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   font-weight: 600;
 }
 
-.nav { display: flex; align-items: center; gap: 4px; flex: 1; }
+.nav { display: flex; align-items: center; justify-content: center; gap: 6px; flex: 1; }
 .nav-link {
   padding: 8px 14px;
   border-radius: var(--radius-md);
@@ -202,6 +202,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   color: var(--gray-700);
   transition: var(--transition);
   position: relative;
+  white-space: nowrap;
 }
 .nav-link:hover { background: var(--gray-100); color: var(--teal-800); }
 .nav-link.active { color: var(--teal-800); background: var(--teal-50); }
