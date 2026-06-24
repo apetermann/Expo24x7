@@ -36,7 +36,7 @@ Este repositório contém um **MVP visual navegável** da plataforma Exposibram 
 | **5. Conteúdo e Comunidade** | Notícias, podcast, eventos, vagas, biblioteca | Reduz CAC, aumenta engajamento |
 
 **North Star Metric:** GMV — volume de negócios facilitados pela plataforma.
-Meta 18 meses: R$ 18 bi anualizados.
+Meta 2028: R$ 5 mi de receita líquida, com volume (GMV) na casa das centenas de milhões por ano.
 
 ---
 
@@ -213,5 +213,5 @@ Belo Horizonte, MG, Brasil
 
 ---
 
-*Última atualização do protótipo: Maio 2026*
+*Última atualização do protótipo: Junho 2026*
 *Versão: MVP visual 0.1 · Para validação com parceiro técnico*
