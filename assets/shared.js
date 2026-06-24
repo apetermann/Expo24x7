@@ -388,11 +388,7 @@ function renderHeader(activeNav = '') {
     <header class="header">
       <div class="header-inner">
         <a href="index.html" class="logo">
-          <div class="logo-mark"></div>
-          <div class="logo-text">
-            <span class="logo-title">EXPOSIBRAM <span>24x7</span></span>
-            <span class="logo-tag">A FEIRA PERMANENTE DA MINERAÇÃO</span>
-          </div>
+          <img src="assets/img/exposibram-24x7.png" alt="Exposibram 24x7 · Mineração do Brasil" class="logo-img">
         </a>
         <nav class="nav">
           <a href="index.html" class="nav-link ${activeNav==='home'?'active':''}">Início</a>
@@ -425,12 +421,8 @@ function renderFooter() {
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <a href="index.html" class="logo">
-              <div class="logo-mark"></div>
-              <div class="logo-text">
-                <span class="logo-title">EXPOSIBRAM <span>24x7</span></span>
-                <span class="logo-tag" style="color:rgba(255,255,255,0.4)">A FEIRA PERMANENTE</span>
-              </div>
+            <a href="index.html" style="display:inline-block; background:#fff; border-radius:10px; padding:12px 18px;">
+              <img src="assets/img/exposibram-24x7.png" alt="Exposibram 24x7" style="height:48px; width:auto; display:block;">
             </a>
             <p>A plataforma digital permanente que conecta toda a cadeia produtiva da mineração brasileira 365 dias por ano.</p>
           </div>
@@ -471,8 +463,14 @@ function renderFooter() {
             </ul>
           </div>
         </div>
+        <div class="partners-band" style="margin-bottom: 36px;">
+          <span class="partners-label">Uma iniciativa de</span>
+          <img src="assets/img/ibram.jpg" alt="IBRAM" class="p-ibram">
+          <span style="color: var(--gray-400); font-size: 20px; font-weight: 400;">&amp;</span>
+          <img src="assets/img/decarbonmine.png" alt="DeCarbonMine" class="p-dcm">
+        </div>
         <div class="footer-bottom">
-          <div>© 2026 Exposibram 24x7 · Uma iniciativa IBRAM × DeCarbonMine</div>
+          <div>© 2026 Exposibram 24x7 · Uma iniciativa IBRAM &amp; DeCarbonMine</div>
           <div class="footer-partners">
             <span>SOB LICENÇA</span>
             <span style="color: var(--gold-400); font-weight: 600">IBRAM</span>

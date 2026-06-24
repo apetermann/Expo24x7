@@ -168,6 +168,31 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   font-weight: 500;
 }
 
+/* ── LOGOS INSTITUCIONAIS / PARCEIROS ──────────────────────── */
+.logo-img { height: 60px; width: auto; display: block; }
+.partners-band {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 22px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.partners-band img { width: auto; display: block; }
+.partners-band .p-ibram { height: 44px; }
+.partners-band .p-dcm { height: 30px; }
+.partners-band .p-expo { height: 48px; }
+.partners-band .p-divider { width: 1px; height: 40px; background: var(--gray-200); }
+.partners-label {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-weight: 600;
+}
+
 .nav { display: flex; align-items: center; gap: 4px; flex: 1; }
 .nav-link {
   padding: 8px 14px;
