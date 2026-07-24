@@ -1019,22 +1019,28 @@
     .scene[data-scene="6"] .scene-grid { grid-template-rows: minmax(0, 1fr); min-height: 0; }
     .scene[data-scene="6"] .visual-panel { min-height: 0; }
     .scene[data-scene="6"] .visual-body { min-height: 0; }
-    .mtx { width:100%; border-collapse:collapse; table-layout:fixed; font-size:11px; }
-    .mtx col.attr { width:15%; }
-    .mtx th, .mtx td { padding:7px 10px; text-align:left; vertical-align:top; border-bottom:1px solid var(--gray-200); line-height:1.4; color:var(--gray-800); }
-    .mtx thead th { font-family:'Inter',sans-serif; font-weight:700; font-size:12px; color:#fff; padding:10px; }
-    .mtx thead th small { display:block; font-family:'Inter',sans-serif; font-weight:500; font-size:9.5px; opacity:.9; margin-top:2px; }
-    .mtx thead th.a { background:var(--gold-600); }
-    .mtx thead th.b { background:var(--teal-600); }
-    .mtx thead th.c { background:var(--green-600); }
-    .mtx thead th.corner { background:#fff; border-bottom:1px solid var(--gray-200); }
-    .mtx td.k { font-family:'Inter',sans-serif; font-weight:700; font-size:9.5px; letter-spacing:.3px; text-transform:uppercase; color:var(--teal-900); background:var(--off-white); }
-    .mtx tbody tr:nth-child(even) td:not(.k) { background:#fafbfa; }
-    .mtx tbody tr:last-child td { border-bottom:none; }
-    .mtx b { font-weight:700; color:var(--teal-900); }
-    .mtx .muted { color:var(--gray-400); }
-    .mtx-note { margin-top:14px; padding-top:12px; border-top:1px solid var(--gray-200); font-size:10px; color:var(--gray-600); line-height:1.5; }
-    .mtx-note b { color:var(--gray-800); }
+    .sol-cards { display:flex; flex-direction:column; gap:12px; }
+    .sol-card { border:1px solid var(--gray-200); border-left-width:4px; border-radius:10px; padding:14px 18px; background:var(--white); }
+    .sol-card.a { border-left-color:var(--gold-600); }
+    .sol-card.b { border-left-color:var(--teal-600); }
+    .sol-card.c { border-left-color:var(--green-600); }
+    .sol-top { display:flex; align-items:baseline; gap:10px; margin-bottom:2px; flex-wrap:wrap; }
+    .sol-tag { font-family:'Inter',sans-serif; font-weight:700; font-size:9.5px; letter-spacing:1px; text-transform:uppercase; color:#fff; padding:3px 9px; border-radius:6px; flex-shrink:0; }
+    .sol-card.a .sol-tag { background:var(--gold-600); }
+    .sol-card.b .sol-tag { background:var(--teal-600); }
+    .sol-card.c .sol-tag { background:var(--green-600); }
+    .sol-head { font-family:'Playfair Display',serif; font-weight:700; font-size:16px; color:var(--teal-900); line-height:1.2; }
+    .sol-list { margin:8px 0 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:5px; }
+    .sol-list li { position:relative; padding-left:16px; font-size:12px; color:var(--gray-800); line-height:1.45; }
+    .sol-list li::before { content:""; position:absolute; left:0; top:6px; width:6px; height:6px; border-radius:50%; background:var(--gold-500); }
+    .sol-card.b .sol-list li::before { background:var(--teal-500); }
+    .sol-card.c .sol-list li::before { background:var(--green-500); }
+    .sol-context { margin-top:8px; font-size:10.5px; color:var(--gray-600); font-style:italic; }
+    .sol-declined { margin-top:14px; padding:10px 14px; border:1px dashed var(--gray-400); border-radius:8px; font-size:11.5px; color:var(--gray-600); display:flex; align-items:center; gap:10px; }
+    .sol-declined b { color:var(--gray-800); }
+    .sol-declined .pill { font-family:'Inter',sans-serif; font-weight:700; font-size:9px; letter-spacing:1px; text-transform:uppercase; color:var(--gray-600); background:var(--gray-200); padding:3px 9px; border-radius:6px; flex-shrink:0; }
+    .sol-note { margin-top:14px; padding-top:12px; border-top:1px solid var(--gray-200); font-size:10px; color:var(--gray-600); line-height:1.5; }
+    .sol-note b { color:var(--gray-800); }
 
     /* ─── Help button ─── */
     .help-toggle {
@@ -1655,25 +1661,25 @@
     <div class="scene-grid">
       <div class="caption-panel">
         <div class="caption-eyebrow">Anexo · A Parceira Tecnológica</div>
-        <h2 class="caption-title">Três candidatas a <em>parceira tecnológica</em> da plataforma.</h2>
+        <h2 class="caption-title">A escolha pela <em>solução</em>, não só pelo perfil.</h2>
         <div class="caption-divider"></div>
         <p class="caption-quote">
-          "As três empresas avaliadas para construir a plataforma Exposibram 24x7 — o parceiro tecnológico do projeto."
+          "Comparamos as candidatas pelo tipo de solução que cada uma constrói para o Exposibram 24x7."
         </p>
         <div class="caption-key">
           <div class="caption-key-bullet" style="background: var(--gold-500)"></div>
-          <div><strong>Empresa A</strong> — SaaS de gestão organizacional com IA nativa. Startup enxuta e modular (2025).</div>
+          <div><strong>Customizada com IA</strong> — plataforma sob medida, construída do zero.</div>
         </div>
         <div class="caption-key">
           <div class="caption-key-bullet" style="background: var(--teal-500)"></div>
-          <div><strong>Empresa B</strong> — Vídeo enterprise + IA aplicada. Desde 2004, ~100 pessoas, cases em grandes grupos de mídia.</div>
+          <div><strong>Sob medida + experiência</strong> — casa consolidada, alta maturidade de entrega.</div>
         </div>
         <div class="caption-key">
           <div class="caption-key-bullet" style="background: var(--green-500)"></div>
-          <div><strong>Empresa C</strong> — Comércio B2B "AI-native". ~R$ 1 bi de GMV nos clientes e integrações nativas com ERPs.</div>
+          <div><strong>White-label + marketplace B2B</strong> — plataforma pronta, go-live acelerado.</div>
         </div>
         <div class="caption-explore">
-          <div class="caption-explore-label">Matriz comparativa completa ao lado →</div>
+          <div class="caption-explore-label">Uma 4ª candidata (white-label) declinou o convite</div>
         </div>
       </div>
 
@@ -1682,76 +1688,57 @@
           <div class="visual-chrome-dot"></div>
           <div class="visual-chrome-dot"></div>
           <div class="visual-chrome-dot"></div>
-          <div class="visual-chrome-url"><strong>exposibram24x7.com.br</strong>/parceira/matriz-de-perfil</div>
+          <div class="visual-chrome-url"><strong>exposibram24x7.com.br</strong>/parceira/analise-por-solucao</div>
         </div>
         <div class="visual-body">
-          <table class="mtx">
-            <colgroup><col class="attr"><col><col><col></colgroup>
-            <thead>
-              <tr>
-                <th class="corner"></th>
-                <th class="a">Empresa A<small>SaaS de gestão com IA</small></th>
-                <th class="b">Empresa B<small>Vídeo enterprise + IA</small></th>
-                <th class="c">Empresa C<small>Comércio B2B</small></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td class="k">Fundação · Base</td>
-                <td><b>2025</b> · Sudeste do Brasil</td>
-                <td><b>2004</b> · Sudeste do Brasil</td>
-                <td><b>2012</b> (produção desde 2013) · Sul e Sudeste · escritório na Europa</td></tr>
-              <tr><td class="k">Origem &amp; Liderança</td>
-                <td>Startup fundada e liderada por dois sócios-empreendedores</td>
-                <td>Fundada por empreendedor de destaque no ecossistema nacional de inovação (de volta ao comando desde 2024); nasceu em conteúdo mobile e consolidou-se em vídeo online</td>
-                <td>Fundada por ex-executivo do mercado financeiro internacional e por empreendedor premiado; evolução de um marketplace próprio de peças industriais</td></tr>
-              <tr><td class="k">Posicionamento</td>
-                <td>SaaS de gestão organizacional com IA nativa (processos, pessoas, produtividade)</td>
-                <td>IA aplicada + dados + desenvolvimento sob medida, mantendo a plataforma de vídeo enterprise</td>
-                <td>Plataforma de comércio B2B "AI-native" — negociação governada por motor de regras comerciais</td></tr>
-              <tr><td class="k">Produto Principal</td>
-                <td>Plataforma modular: BPM com agentes de IA, gestão de pessoas (recrutamento, OKRs, LMS, compliance trabalhista), GED com assinatura digital e copiloto de IA transversal</td>
-                <td>Plataforma de vídeo (lives multi-CDN, VoD com DRM, OTT, LMS, analytics de audiência) + agentes de IA para automação, por assinatura</td>
-                <td>Catálogo técnico multi-fornecedor, marketplace multi-seller, checkout com crédito B2B (faturado 30/60/90), storefront no-code e agentes de IA com controle de autonomia</td></tr>
-              <tr><td class="k">Linhas de Oferta</td>
-                <td>Processos · Pessoas · Documentos · Performance operacional · Copiloto de IA</td>
-                <td>Vídeo enterprise · Agentes de IA · Desenvolvimento sob medida · Consultoria de IA · Alocação de squads</td>
-                <td>Plataforma SaaS white-label · Implantação enterprise · Agentes de IA</td></tr>
-              <tr><td class="k">Tipo de Entrega</td>
-                <td>SaaS modular + software sob encomenda</td>
-                <td>SaaS (vídeo) + consultoria + squads e projetos sob medida</td>
-                <td>SaaS enterprise white-label + projeto de implantação (apps publicados com a marca do cliente)</td></tr>
-              <tr><td class="k">Base de Clientes</td>
-                <td>~18 organizações regionais: construtoras, consultorias, ensino superior, academias e programa de entidade setorial</td>
-                <td>Grandes grupos de mídia e TV aberta, seguradoras, varejo nacional, classificados, educação; entidade associativa do comércio varejista</td>
-                <td>Multinacionais de autopeças e indústria, agro, construção e distribuição; marketplace de 12 cooperativas do agro (80 mil cooperados)</td></tr>
-              <tr><td class="k">Cases Divulgados</td>
-                <td>Redução de 40% no retrabalho de RH (consultoria digital) · ROI operacional (empresa de monitoramento)</td>
-                <td>Consultor digital de IA para associação varejista · IA corporativa industrial com base técnica · EAD customizada em larga escala</td>
-                <td>40% das vendas de peças de um grande grupo via plataforma · cotação B2B de 5 dias para 8 minutos · marketplace cooperativo com 26 mil SKUs na 1ª fase</td></tr>
-              <tr><td class="k">Porte / Time</td>
-                <td>Microempresa · 2 sócios-administradores · capital social R$ 40 mil</td>
-                <td>~100 pessoas (2024) · faixa 51–200</td>
-                <td>Faixa 50–249 · ~100 pessoas em 2019</td></tr>
-              <tr><td class="k">Capital / Números</td>
-                <td>Bootstrap; sem captação ou números públicos</td>
-                <td>Rodadas de venture capital nacionais e internacionais (2008–2021) · meta de +25% para 2025 · R$ 8 mi planejados em IA</td>
-                <td>R$ 60 mi captados em 3 rodadas (última em 2020) · ~R$ 1 bi de GMV transacionado nos clientes (2024, declaração) · 50+ clientes enterprise</td></tr>
-              <tr><td class="k">Modelo Comercial</td>
-                <td>Assinatura por módulo/uso, sem fidelidade; cotação sob demanda</td>
-                <td>Licença SaaS (cotação) · assinatura por agente de IA · projetos e squads (time &amp; materials)</td>
-                <td>Licença enterprise (cotação) + implantação; white-label por padrão</td></tr>
-              <tr><td class="k">Tecnologia &amp; Integrações</td>
-                <td>IA nativa (workflows por linguagem natural) · compliance trabalhista/eSocial · assinatura digital</td>
-                <td>APIs de vídeo, encoder próprio, DRM, multi-CDN · integrações via projeto (mensageria, atendimento, ERPs, BI)</td>
-                <td>API-first/headless, 90+ serviços REST · integrações nativas com os principais ERPs · tratamento fiscal brasileiro nativo</td></tr>
-              <tr><td class="k">Reconhecimentos</td>
-                <td><span class="muted">— sem registros públicos localizados</span></td>
-                <td>Prêmio internacional de inovação · certificação de melhor ambiente de trabalho em TI · parceria de longa data com universidade internacional de ponta</td>
-                <td>Fundador em ranking internacional de jovens empreendedores · expansão internacional para a Europa (2024)</td></tr>
-            </tbody>
-          </table>
-          <div class="mtx-note">
-            <b>Versão anonimizada · fontes públicas.</b> Documento descritivo, sem avaliação de aderência ou risco. Nomes de empresas, marcas, clientes e localidades foram suprimidos ou generalizados para circulação externa. Números declarados pelas próprias empresas não foram auditados. "—" = não localizado em fontes públicas.
+          <div class="sol-cards">
+            <div class="sol-card a">
+              <div class="sol-top">
+                <span class="sol-tag">Empresa A</span>
+                <span class="sol-head">Desenvolvimento customizado com IA integrada</span>
+              </div>
+              <ul class="sol-list">
+                <li>Plataforma construída sob medida, do zero, para o Exposibram 24x7 — máxima flexibilidade de escopo.</li>
+                <li>IA nativa desde a base: agentes e automações com fluxos por linguagem natural.</li>
+                <li>Estrutura enxuta e ágil, focada em software sob encomenda.</li>
+              </ul>
+              <div class="sol-context">Contexto: casa de tecnologia com IA nativa; entrega sob encomenda.</div>
+            </div>
+
+            <div class="sol-card b">
+              <div class="sol-top">
+                <span class="sol-tag">Empresa B</span>
+                <span class="sol-head">Desenvolvimento sob medida + grande experiência de mercado</span>
+              </div>
+              <ul class="sol-list">
+                <li>Casa de tecnologia consolidada (desde 2004, ~100 pessoas) com forte maturidade de entrega.</li>
+                <li>Une desenvolvimento sob medida, squads dedicados e IA aplicada sobre plataforma própria.</li>
+                <li>Portfólio robusto com grandes grupos — track record de projetos de larga escala.</li>
+              </ul>
+              <div class="sol-context">Contexto: base em vídeo enterprise; aportes de venture capital; cases em grandes grupos.</div>
+            </div>
+
+            <div class="sol-card c">
+              <div class="sol-top">
+                <span class="sol-tag">Empresa C</span>
+                <span class="sol-head">Plataforma white-label + marketplace B2B</span>
+              </div>
+              <ul class="sol-list">
+                <li>Plataforma de comércio B2B "AI-native" já pronta, entregue white-label — go-live mais rápido.</li>
+                <li>Marketplace multi-fornecedor com checkout e crédito B2B; integrações nativas com ERPs.</li>
+                <li>Escala comprovada: ~R$ 1 bi de GMV transacionado nos clientes; 50+ clientes enterprise.</li>
+              </ul>
+              <div class="sol-context">Contexto: motor de regras comerciais; API-first/headless; tratamento fiscal nativo.</div>
+            </div>
+          </div>
+
+          <div class="sol-declined">
+            <span class="pill">Declinou</span>
+            <div>Uma quarta candidata, com solução <b>white-label</b>, foi avaliada mas <b>declinou o convite</b>.</div>
+          </div>
+
+          <div class="sol-note">
+            <b>Versão anonimizada · fontes públicas.</b> Análise descritiva por tipo de solução, sem avaliação formal de aderência ou risco. Nomes de empresas, marcas e clientes foram suprimidos para circulação externa; números declarados pelas próprias empresas não foram auditados.
           </div>
         </div>
       </div>
